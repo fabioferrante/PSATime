@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.fabio.psatime.app-mergeDebugResources-49:/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Fabio\\.gradle\\caches\\8.13\\transforms\\669ea09fc208b0a0ec8311a41c2e88a8\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

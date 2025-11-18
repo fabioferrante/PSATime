@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Cores Status Neutro (Vazio) -->
+    <color name="status_neutral">#FF6E7178</color>
+    <color name="status_neutral_bg">#FFEFEFF1</color>
+
+    <!-- Cores Status Verde -->
+    <color name="status_green">#FF008761</color>
+    <color name="status_green_bg">#FFD6F7E9</color>
+
+    <!-- Cores Status Amarelo -->
+    <color name="status_yellow">#FFB54A00</color>
+    <color name="status_yellow_bg">#FFFFF3D5</color>
+
+    <!-- Cores Status Vermelho -->
+    <color name="status_red">#FFBA1A1A</color>
+    <color name="status_red_bg">#FFFFDAD6</color>
+</resources>

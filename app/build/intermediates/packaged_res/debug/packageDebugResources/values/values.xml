@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="status_green">#FF008761</color>
+    <color name="status_green_bg">#FFD6F7E9</color>
+    <color name="status_neutral">#FF6E7178</color>
+    <color name="status_neutral_bg">#FFEFEFF1</color>
+    <color name="status_red">#FFBA1A1A</color>
+    <color name="status_red_bg">#FFFFDAD6</color>
+    <color name="status_yellow">#FFB54A00</color>
+    <color name="status_yellow_bg">#FFFFF3D5</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">PSA Time</string>
+    <string name="status_danger_message">O resultado de acompanhamento após 3 meses confirmou ou aumentou a variação do PSA.\n\nOrientação importante: agora é hora de fazer uma Ressonância de Próstata o quanto antes e procurar seu médico com urgência.\n\nA detecção precoce faz toda a diferença!</string>
+    <string name="status_danger_title">Status: Ação Imediata!</string>
+    <string name="status_empty_message">Insira valores para receber seus alertas de saúde aqui.</string>
+    <string name="status_empty_title">Bem-vindo!</string>
+    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura (abaixo de 0.4). Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
+    <string name="status_normal_title">Nível Normal</string>
+    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal (0,4 ou mais). \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação acima de 0.4, é importante procurar seu médico.</string>
+    <string name="status_warning_title">Status: Atenção! Variação >= 0.4</string>
+    <style name="Base.Theme.PSATime" parent="Theme.Material3.Light.NoActionBar"> 
+        
+        
+    </style>
+    <style name="Theme.PSATime" parent="Base.Theme.PSATime"/>
+    <style name="Theme.PSATime.Light" parent="Theme.Material3.Light.NoActionBar">
+        
+    </style>
+</resources>
