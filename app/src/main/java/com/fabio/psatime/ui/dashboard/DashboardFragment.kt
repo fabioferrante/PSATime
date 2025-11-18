@@ -1,5 +1,6 @@
 package com.fabio.psatime.ui.dashboard
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,6 @@ class DashboardFragment : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
 
-    // Usamos 'activity as ...' para compartilhar o ViewModel com o BottomSheet
     private val viewModel: PsaViewModel by viewModels({ activity as androidx.fragment.app.FragmentActivity })
     private lateinit var historyAdapter: PsaHistoryAdapter
 
@@ -35,34 +35,23 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Configura os componentes da tela
         setupRecyclerView()
         setupClickListeners()
         setupObservers()
     }
 
-    /**
-     * Configura todos os listeners de clique da tela
-     */
     private fun setupClickListeners() {
-        // Botão flutuante para adicionar novo resultado
         binding.fabAddResult.setOnClickListener {
             AddResultBottomSheet().show(parentFragmentManager, AddResultBottomSheet.TAG)
         }
 
-        // Botão de Menu (Hamburger) - (ícone de navegação)
         binding.toolbarDashboard.setNavigationOnClickListener {
-            // Por enquanto, mostra um Toast.
-            // No futuro, aqui abriria um Navigation Drawer (menu lateral).
-            Toast.makeText(requireContext(), "Botão de Menu Clicado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Menu", Toast.LENGTH_SHORT).show()
         }
 
-        // Botão de Configurações (Ícone de engrenagem) - (menu de itens)
         binding.toolbarDashboard.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_settings -> {
-                    // Navega para o SettingsFragment
                     findNavController().navigate(R.id.action_dashboardFragment_to_settingsFragment)
                     true
                 }
@@ -71,44 +60,57 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    /**
-     * Configura o RecyclerView (a lista de histórico)
-     */
     private fun setupRecyclerView() {
-        historyAdapter = PsaHistoryAdapter()
+        // Passamos as funções de callback para o Adapter
+        historyAdapter = PsaHistoryAdapter(
+            onEditClick = { result ->
+                // Abre o BottomSheet em modo de edição
+                val bottomSheet = AddResultBottomSheet.newInstance(result.id, result.year, result.value)
+                bottomSheet.show(parentFragmentManager, AddResultBottomSheet.TAG)
+            },
+            onDeleteClick = { result ->
+                // Mostra confirmação antes de excluir
+                showDeleteConfirmationDialog(result)
+            }
+        )
+
         binding.recyclerViewHistory.apply {
             adapter = historyAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            // Desativa a animação "change" (o "pisca") para uma UI mais limpa
             (itemAnimator as? SimpleItemAnimator)?.supportsChangeAnimations = false
         }
     }
 
-    /**
-     * Observa as mudanças no ViewModel (Lista de resultados e Status)
-     */
+    private fun showDeleteConfirmationDialog(result: PsaResult) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Excluir Resultado")
+            .setMessage("Tem certeza que deseja excluir o registro de ${result.year}?")
+            .setPositiveButton("Excluir") { _, _ ->
+                viewModel.deleteResult(result)
+                Toast.makeText(requireContext(), "Registro excluído", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
+    }
+
     private fun setupObservers() {
-        // Observa a lista de resultados e atualiza o adapter
         viewModel.allResults.observe(viewLifecycleOwner) { results ->
             historyAdapter.submitList(results)
         }
 
-        // Observa o status calculado e atualiza o card principal
         viewModel.currentPsaStatus.observe(viewLifecycleOwner) { status ->
             updateStatusCard(status)
         }
     }
 
-    /**
-     * Atualiza o Card de Status (cores, textos, ícones) com base no estado
-     */
+    // ... (função updateStatusCard permanece igual, não precisa alterar) ...
     private fun updateStatusCard(status: PsaStatus) {
         val context = requireContext()
         when (status) {
             is PsaStatus.Empty -> {
                 binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, R.color.status_neutral_bg))
                 binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, R.color.status_neutral))
-                binding.imgStatusIcon.setImageResource(R.drawable.ic_warning) // Pode trocar por ic_info
+                binding.imgStatusIcon.setImageResource(R.drawable.ic_warning)
                 binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, R.color.status_neutral))
                 binding.tvStatusTitle.setText(R.string.status_empty_title)
                 binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.status_neutral))
@@ -146,7 +148,6 @@ class DashboardFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Limpa a referência ao binding para evitar memory leaks
         _binding = null
     }
 }

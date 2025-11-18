@@ -4,6 +4,7 @@ package com.fabio.psatime.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,6 +22,12 @@ public final class ItemPsaResultBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
+  public final ImageButton btnDeleteItem;
+
+  @NonNull
+  public final ImageButton btnEditItem;
+
+  @NonNull
   public final ImageView imgFlask;
 
   @NonNull
@@ -32,10 +39,13 @@ public final class ItemPsaResultBinding implements ViewBinding {
   @NonNull
   public final TextView tvResultValue;
 
-  private ItemPsaResultBinding(@NonNull MaterialCardView rootView, @NonNull ImageView imgFlask,
-      @NonNull TextView tvResultBadge, @NonNull TextView tvResultDate,
+  private ItemPsaResultBinding(@NonNull MaterialCardView rootView,
+      @NonNull ImageButton btnDeleteItem, @NonNull ImageButton btnEditItem,
+      @NonNull ImageView imgFlask, @NonNull TextView tvResultBadge, @NonNull TextView tvResultDate,
       @NonNull TextView tvResultValue) {
     this.rootView = rootView;
+    this.btnDeleteItem = btnDeleteItem;
+    this.btnEditItem = btnEditItem;
     this.imgFlask = imgFlask;
     this.tvResultBadge = tvResultBadge;
     this.tvResultDate = tvResultDate;
@@ -69,6 +79,18 @@ public final class ItemPsaResultBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_delete_item;
+      ImageButton btnDeleteItem = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteItem == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_edit_item;
+      ImageButton btnEditItem = ViewBindings.findChildViewById(rootView, id);
+      if (btnEditItem == null) {
+        break missingId;
+      }
+
       id = R.id.img_flask;
       ImageView imgFlask = ViewBindings.findChildViewById(rootView, id);
       if (imgFlask == null) {
@@ -93,8 +115,8 @@ public final class ItemPsaResultBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemPsaResultBinding((MaterialCardView) rootView, imgFlask, tvResultBadge,
-          tvResultDate, tvResultValue);
+      return new ItemPsaResultBinding((MaterialCardView) rootView, btnDeleteItem, btnEditItem,
+          imgFlask, tvResultBadge, tvResultDate, tvResultValue);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

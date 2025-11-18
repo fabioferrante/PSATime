@@ -3071,6 +3071,8 @@ drawable ic_call_decline_low
 drawable ic_check_circle
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
+drawable ic_edit
 drawable ic_error
 drawable ic_flask
 drawable ic_keyboard_black_24dp
@@ -3269,6 +3271,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_cancel
+id btn_delete_item
+id btn_edit_item
 id btn_save
 id buttonPanel
 id cache_measures

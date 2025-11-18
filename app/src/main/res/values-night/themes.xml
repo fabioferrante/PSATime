@@ -1,7 +1,23 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.PSATime" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base Theme Night -->
+    <style name="Base.Theme.PSATime" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Fundo principal da Activity -->
+        <item name="android:windowBackground">@android:color/black</item>
+
+        <!-- Edge-to-Edge dark -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Controle total dos tons do Material 3 -->
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurface">@android:color/black</item>
     </style>
+
+    <!-- Tema aplicado no modo escuro -->
+    <style name="Theme.PSATime" parent="Base.Theme.PSATime" />
+
 </resources>

@@ -34,6 +34,8 @@ public final class PsaDao_Impl implements PsaDao {
 
   private final EntityDeletionOrUpdateAdapter<PsaResult> __deletionAdapterOfPsaResult;
 
+  private final EntityDeletionOrUpdateAdapter<PsaResult> __updateAdapterOfPsaResult;
+
   public PsaDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfPsaResult = new EntityInsertionAdapter<PsaResult>(__db) {
@@ -65,6 +67,23 @@ public final class PsaDao_Impl implements PsaDao {
         statement.bindLong(1, entity.getId());
       }
     };
+    this.__updateAdapterOfPsaResult = new EntityDeletionOrUpdateAdapter<PsaResult>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "UPDATE OR ABORT `psa_results` SET `id` = ?,`year` = ?,`value` = ?,`timestamp` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final PsaResult entity) {
+        statement.bindLong(1, entity.getId());
+        statement.bindLong(2, entity.getYear());
+        statement.bindDouble(3, entity.getValue());
+        statement.bindLong(4, entity.getTimestamp());
+        statement.bindLong(5, entity.getId());
+      }
+    };
   }
 
   @Override
@@ -94,6 +113,24 @@ public final class PsaDao_Impl implements PsaDao {
         __db.beginTransaction();
         try {
           __deletionAdapterOfPsaResult.handle(result);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updateResult(final PsaResult result, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfPsaResult.handle(result);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {

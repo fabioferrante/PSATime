@@ -11,11 +11,16 @@ import com.fabio.psatime.R
 import com.fabio.psatime.data.PsaResult
 import com.fabio.psatime.databinding.ItemPsaResultBinding
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 import kotlin.math.abs
 
-class PsaHistoryAdapter : ListAdapter<PsaResult, PsaHistoryAdapter.PsaViewHolder>(PsaDiffCallback()) {
+// Adicionamos callbacks no construtor
+class PsaHistoryAdapter(
+    private val onEditClick: (PsaResult) -> Unit,
+    private val onDeleteClick: (PsaResult) -> Unit
+) : ListAdapter<PsaResult, PsaHistoryAdapter.PsaViewHolder>(PsaDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PsaViewHolder {
         val binding = ItemPsaResultBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -35,12 +40,37 @@ class PsaHistoryAdapter : ListAdapter<PsaResult, PsaHistoryAdapter.PsaViewHolder
         private val dateFormat = SimpleDateFormat("dd 'de' MMM, yyyy", Locale.forLanguageTag("pt-BR"))
 
         fun bind(result: PsaResult, previous: PsaResult?) {
-            binding.tvResultDate.text = "${dateFormat.format(Date(result.timestamp))} (${result.year})"
+
+            // 1. Lógica para formatar o texto da Data (com ou sem ano entre parênteses)
+            val calendar = Calendar.getInstance()
+            calendar.timeInMillis = result.timestamp
+            val timestampYear = calendar.get(Calendar.YEAR)
+
+            val dateDisplay = dateFormat.format(Date(result.timestamp))
+
+            val finalDateText = if (timestampYear != result.year) {
+                // Se os anos forem diferentes, exibe o ano digitado entre parênteses
+                "$dateDisplay (${result.year})"
+            } else {
+                // Se os anos forem iguais, exibe apenas a data
+                dateDisplay
+            }
+
+            // 3. TROCA DE ATRIBUIÇÃO:
+
+            // VALOR (agora é a linha de cima, maior e negrito)
             binding.tvResultValue.text = "${result.value} ng/mL"
+
+            // DATA (agora é a linha de baixo, menor e secundária)
+            binding.tvResultDate.text = finalDateText
+
+            // Configura os cliques de Edição e Exclusão
+            binding.btnEditItem.setOnClickListener { onEditClick(result) }
+            binding.btnDeleteItem.setOnClickListener { onDeleteClick(result) }
 
             if (previous != null) {
                 val diff = result.value - previous.value
-                val percentage = (diff / previous.value) * 100
+                val percentage = if (previous.value != 0f) (diff / previous.value) * 100 else 0f
                 val diffString = String.format(Locale.US, "%.1f", diff)
                 val percString = String.format(Locale.US, "%.0f", abs(percentage))
 
@@ -59,14 +89,14 @@ class PsaHistoryAdapter : ListAdapter<PsaResult, PsaHistoryAdapter.PsaViewHolder
             }
         }
     }
-}
 
-class PsaDiffCallback : DiffUtil.ItemCallback<PsaResult>() {
-    override fun areItemsTheSame(oldItem: PsaResult, newItem: PsaResult): Boolean {
-        return oldItem.id == newItem.id
-    }
+    class PsaDiffCallback : DiffUtil.ItemCallback<PsaResult>() {
+        override fun areItemsTheSame(oldItem: PsaResult, newItem: PsaResult): Boolean {
+            return oldItem.id == newItem.id
+        }
 
-    override fun areContentsTheSame(oldItem: PsaResult, newItem: PsaResult): Boolean {
-        return oldItem == newItem
+        override fun areContentsTheSame(oldItem: PsaResult, newItem: PsaResult): Boolean {
+            return oldItem == newItem
+        }
     }
 }

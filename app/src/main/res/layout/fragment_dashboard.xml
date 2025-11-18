@@ -26,24 +26,25 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Conteúdo com Scroll -->
+
+    <!-- Botão Flutuante -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@android:color/transparent"
         app:cardElevation="0dp"
-        app:strokeWidth="0dp"
-        android:background="@android:color/transparent"> <!-- CORREÇÃO 1: Fundo do Scroll -->
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:strokeWidth="0dp"> <!-- CORREÇÃO 1: Fundo do Scroll -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:orientation="vertical"
             android:padding="16dp"
-            app:cardElevation="0dp"
-            app:strokeWidth="0dp"
-            android:background="@android:color/transparent"
             app:cardBackgroundColor="@android:color/transparent"
-            > <!-- CORREÇÃO 2: Fundo do LinearLayout -->
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp"> <!-- CORREÇÃO 2: Fundo do LinearLayout -->
 
             <!-- Card de Status Dinâmico -->
             <com.google.android.material.card.MaterialCardView
@@ -117,24 +118,25 @@
                 android:id="@+id/recycler_view_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:nestedScrollingEnabled="true"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_psa_result"
+                app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp"
                 app:strokeWidth="0dp"
-                android:background="@android:color/transparent"
-                app:cardBackgroundColor="@android:color/transparent"/>
+                tools:itemCount="3"
+                tools:listitem="@layout/item_psa_result" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Botão Flutuante -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
-        app:tint="@color/white" />
+        app:tint="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_anchorGravity="bottom|end"
+        android:layout_gravity="bottom|end"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

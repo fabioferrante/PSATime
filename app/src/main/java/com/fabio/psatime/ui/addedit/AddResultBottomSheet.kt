@@ -5,29 +5,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
+import com.fabio.psatime.data.PsaResult
 import com.fabio.psatime.databinding.BottomSheetAddResultBinding
 import com.fabio.psatime.ui.dashboard.PsaViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.util.Calendar
 
-
 class AddResultBottomSheet : BottomSheetDialogFragment() {
 
     companion object {
         const val TAG = "AddResultBottomSheet"
+
+        // Método estático para criar instância com argumentos (edição)
+        fun newInstance(resultId: Int, year: Int, value: Float): AddResultBottomSheet {
+            val fragment = AddResultBottomSheet()
+            val args = Bundle()
+            args.putInt("id", resultId)
+            args.putInt("year", year)
+            args.putFloat("value", value)
+            fragment.arguments = args
+            return fragment
+        }
     }
 
     private var _binding: BottomSheetAddResultBinding? = null
     private val binding get() = _binding!!
+    private var resultId: Int? = null // Se null, é novo. Se tem valor, é edição.
 
-    // Compartilha o ViewModel com o DashboardFragment
-    private val viewModel: PsaViewModel by viewModels({ activity as FragmentActivity })
+    private val viewModel: PsaViewModel by viewModels({ activity as androidx.fragment.app.FragmentActivity })
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = BottomSheetAddResultBinding.inflate(inflater, container, false)
@@ -37,8 +46,20 @@ class AddResultBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Preenche o ano atual como padrão
-        binding.inputEditTextYear.setText(Calendar.getInstance().get(Calendar.YEAR).toString())
+        // Verifica se estamos editando
+        arguments?.let {
+            if (it.containsKey("id")) {
+                resultId = it.getInt("id")
+                binding.inputEditTextYear.setText(it.getInt("year").toString())
+                binding.inputEditTextValue.setText(it.getFloat("value").toString())
+                binding.tvBottomSheetTitle.text = "Editar Resultado"
+            }
+        }
+
+        // Se não for edição, preenche ano atual
+        if (resultId == null) {
+            binding.inputEditTextYear.setText(Calendar.getInstance().get(Calendar.YEAR).toString())
+        }
 
         binding.btnCancel.setOnClickListener {
             dismiss()
@@ -60,9 +81,10 @@ class AddResultBottomSheet : BottomSheetDialogFragment() {
 
         val year = yearStr.toIntOrNull()
         val value = valueStr.toFloatOrNull()
+        val currentYear = Calendar.getInstance().get(Calendar.YEAR)
 
-        if (year == null || value == null) {
-            Toast.makeText(requireContext(), "Valores inválidos", Toast.LENGTH_SHORT).show()
+        if (year == null || year < 2000 || year > (currentYear + 1)) {
+            Toast.makeText(requireContext(), "Por favor, insira um ano válido.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -71,7 +93,15 @@ class AddResultBottomSheet : BottomSheetDialogFragment() {
             return
         }
 
-        viewModel.insertResult(year, value)
+        if (resultId != null) {
+            // Atualizar existente
+            val updatedResult = PsaResult(id = resultId!!, year = year, value = value)
+            viewModel.updateResult(updatedResult)
+        } else {
+            // Inserir novo
+            viewModel.insertResult(year, value)
+        }
+
         dismiss()
     }
 

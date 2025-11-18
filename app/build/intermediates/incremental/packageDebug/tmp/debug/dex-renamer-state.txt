@@ -1,4 +1,4 @@
-#Tue Nov 18 14:12:34 BRT 2025
+#Tue Nov 18 19:14:39 BRT 2025
 base.0=C\:\\Users\\Fabio\\AndroidStudioProjects\\PSATime\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Fabio\\AndroidStudioProjects\\PSATime\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Fabio\\AndroidStudioProjects\\PSATime\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

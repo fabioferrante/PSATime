@@ -18,6 +18,8 @@ drawable bg_status_icon
 drawable ic_add
 drawable ic_arrow_back
 drawable ic_check_circle
+drawable ic_delete
+drawable ic_edit
 drawable ic_error
 drawable ic_flask
 drawable ic_launcher_background
@@ -32,6 +34,8 @@ id action_dashboardFragment_to_settingsFragment
 id action_settings
 id appBarLayout
 id btn_cancel
+id btn_delete_item
+id btn_edit_item
 id btn_save
 id card_status
 id dashboardFragment

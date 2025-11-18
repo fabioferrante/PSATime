@@ -3070,6 +3070,8 @@ int drawable ic_call_decline_low 0x7f070093
 int drawable ic_check_circle 0x7f070094
 int drawable ic_clear_black_24 0x7f070095
 int drawable ic_clock_black_24dp 0x7f070096
+int drawable ic_delete 0x7f0700f6
+int drawable ic_edit 0x7f0700f7
 int drawable ic_error 0x7f070097
 int drawable ic_flask 0x7f070098
 int drawable ic_keyboard_black_24dp 0x7f070099
@@ -3268,6 +3270,8 @@ int id bounceBoth 0x7f080063
 int id bounceEnd 0x7f080064
 int id bounceStart 0x7f080065
 int id btn_cancel 0x7f080066
+int id btn_delete_item 0x7f08021b
+int id btn_edit_item 0x7f08021c
 int id btn_save 0x7f080067
 int id buttonPanel 0x7f080068
 int id cache_measures 0x7f080069

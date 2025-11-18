@@ -5,16 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
-    app:cardCornerRadius="16dp"
     app:cardElevation="0dp"
+    app:cardCornerRadius="16dp"
     app:strokeWidth="0dp"
-    android:background="@android:color/transparent"
-    app:cardBackgroundColor="@android:color/transparent" > <!-- ESTA É A LINHA MÁGICA -->
+    app:cardBackgroundColor="#00000000">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/img_flask"
@@ -29,33 +28,37 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tint="?attr/colorOnPrimaryContainer" />
 
-        <TextView
-            android:id="@+id/tv_result_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textColor="?attr/colorOnSurface"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/img_flask"
+        <!-- Botão Excluir -->
+        <ImageButton
+            android:id="@+id/btn_delete_item"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="20 de Out, 2023" />
+            app:tint="?attr/colorError" />
 
-        <TextView
-            android:id="@+id/tv_result_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/img_flask"
-            app:layout_constraintTop_toBottomOf="@id/tv_result_date"
-            tools:text="1.5 ng/mL" />
+        <!-- Botão Editar -->
+        <ImageButton
+            android:id="@+id/btn_edit_item"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="2dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorOnSurfaceVariant" />
 
+        <!-- Badge de Variação -->
         <TextView
             android:id="@+id/tv_result_badge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/bg_history_badge_green"
             android:paddingStart="10dp"
             android:paddingTop="4dp"
@@ -64,9 +67,38 @@
             android:textColor="@color/status_green"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_edit_item"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="↓ -0.2 | -12%" />
+
+        <!-- NOVO TextView Valor (Agora é o principal, TOP) -->
+        <TextView
+            android:id="@+id/tv_result_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img_flask"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_result_badge"
+            tools:text="1.5 ng/mL" />
+
+        <!-- NOVO TextView Data (Agora é o secundário, BOTTOM) -->
+        <TextView
+            android:id="@+id/tv_result_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/img_flask"
+            app:layout_constraintTop_toBottomOf="@id/tv_result_value"
+            app:layout_constraintEnd_toStartOf="@id/tv_result_badge"
+            tools:text="2025 | 18 de nov, 2025" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
