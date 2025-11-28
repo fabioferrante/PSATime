@@ -1,12 +1,14 @@
 package com.fabio.psatime.data;
 
 import android.database.Cursor;
+import android.os.CancellationSignal;
 import androidx.annotation.NonNull;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -35,6 +37,8 @@ public final class PsaDao_Impl implements PsaDao {
   private final EntityDeletionOrUpdateAdapter<PsaResult> __deletionAdapterOfPsaResult;
 
   private final EntityDeletionOrUpdateAdapter<PsaResult> __updateAdapterOfPsaResult;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
   public PsaDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
@@ -84,6 +88,14 @@ public final class PsaDao_Impl implements PsaDao {
         statement.bindLong(5, entity.getId());
       }
     };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM psa_results";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -95,6 +107,25 @@ public final class PsaDao_Impl implements PsaDao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfPsaResult.insert(result);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object insertAll(final List<PsaResult> results,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfPsaResult.insert(results);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -141,6 +172,29 @@ public final class PsaDao_Impl implements PsaDao {
   }
 
   @Override
+  public Object deleteAll(final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteAll.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public Flow<List<PsaResult>> getAllResults() {
     final String _sql = "SELECT * FROM psa_results ORDER BY timestamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
@@ -179,6 +233,44 @@ public final class PsaDao_Impl implements PsaDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object getAllResultsList(final Continuation<? super List<PsaResult>> $completion) {
+    final String _sql = "SELECT * FROM psa_results";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<PsaResult>>() {
+      @Override
+      @NonNull
+      public List<PsaResult> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfYear = CursorUtil.getColumnIndexOrThrow(_cursor, "year");
+          final int _cursorIndexOfValue = CursorUtil.getColumnIndexOrThrow(_cursor, "value");
+          final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
+          final List<PsaResult> _result = new ArrayList<PsaResult>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final PsaResult _item;
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
+            final int _tmpYear;
+            _tmpYear = _cursor.getInt(_cursorIndexOfYear);
+            final float _tmpValue;
+            _tmpValue = _cursor.getFloat(_cursorIndexOfValue);
+            final long _tmpTimestamp;
+            _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
+            _item = new PsaResult(_tmpId,_tmpYear,_tmpValue,_tmpTimestamp);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
   }
 
   @NonNull

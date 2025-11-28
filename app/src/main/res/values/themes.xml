@@ -1,14 +1,38 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base theme -->
-    <style name="Base.Theme.PSATime" parent="Theme.Material3.Light.NoActionBar"> <!-- AQUI ESTÁ A MUDANÇA -->
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.PSATime" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- CORES PRINCIPAIS -->
+        <item name="colorPrimary">@color/studio_light_primary</item>
+        <item name="colorOnPrimary">@color/studio_light_on_primary</item>
+
+        <!-- CORREÇÃO DO LILÁS (Parte 1: Botão/Bolinha) -->
+        <item name="colorSecondary">@color/studio_light_primary</item>
+        <item name="colorOnSecondary">@color/studio_light_on_primary</item>
+        <item name="colorAccent">@color/studio_light_primary</item>
+        <item name="colorControlActivated">@color/studio_light_primary</item>
+
+        <!-- CORREÇÃO DO FUNDO LILÁS (Parte 2: O Retângulo) -->
+        <!-- Aponta para o azul claro que criamos no colors.xml -->
+        <item name="colorSecondaryContainer">@color/studio_light_selection_bg</item>
+        <item name="colorOnSecondaryContainer">@color/studio_light_primary</item>
+
+        <!-- Fundo e Superfícies -->
+        <item name="android:colorBackground">@color/studio_light_background</item>
+        <item name="colorSurface">@color/studio_light_surface</item>
+
+        <item name="colorSurfaceContainerLowest">@color/studio_light_background</item>
+        <item name="colorSurfaceContainer">@color/studio_light_surface</item>
+
+        <!-- Texto -->
+        <item name="colorOnSurface">@color/studio_light_text_primary</item>
+
+        <item name="android:colorAccent">@color/studio_light_primary</item>
+        <item name="android:colorControlActivated">@color/studio_light_primary</item>
     </style>
 
     <style name="Theme.PSATime" parent="Base.Theme.PSATime" />
 
-    <!-- Tema Forçado Claro (Este agora é redundante, mas pode deixar) -->
-    <style name="Theme.PSATime.Light" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

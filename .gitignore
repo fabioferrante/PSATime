@@ -13,3 +13,43 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.iml
+
+# Build
+/build/
+app/build/
+.gradle/
+.idea/
+captures/
+
+# Keystore
+*.jks
+*.keystore
+
+# Configs locais (não subir pro GitHub)
+local.properties
+gradle.properties
+google-services.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+*.jks
+*.keystore
+local.properties
+/app/build/
+/build/
+*.iml
+.gradle/
+.DS_Store
+
+

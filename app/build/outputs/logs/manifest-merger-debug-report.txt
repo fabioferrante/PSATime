@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [androidx.databinding:viewbinding:8.13.1] C:\Users\Fabio\.gradle\caches\8.13\transforms\ecb0fbdf13a0c7215ad9f4fb74b0a8bd\transformed\viewbinding-8.13.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.6] C:\Users\Fabio\.gradle\caches\8.13\transforms\05fd45d67ef8b855d254aefb07f74a22\transformed\navigation-runtime-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.6] C:\Users\Fabio\.gradle\caches\8.13\transforms\08dbec5f9592ddee948ac446dfe8bd4b\transformed\navigation-common-release\AndroidManifest.xml:17:1-22:12
@@ -78,9 +78,21 @@ MERGED from [com.google.ar.sceneform:filament-android:1.17.1] C:\Users\Fabio\.gr
 		INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:6:5-77
+	android:name
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:6:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:8:22-78
 application
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:5:5-23:19
-INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:5:5-23:19
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:10:5-38:19
+INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:10:5-38:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Fabio\.gradle\caches\8.13\transforms\3944baaec4a080778c4cce82a5ba2f04\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Fabio\.gradle\caches\8.13\transforms\3944baaec4a080778c4cce82a5ba2f04\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Fabio\.gradle\caches\8.13\transforms\63df5b2c739925776d7791472941a566\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -106,37 +118,51 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Fabio\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Fabio\.gradle\caches\8.13\transforms\7f07a5287622ca852b341258645975d0\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:15:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:8:9-54
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:13:9-54
 	android:roundIcon
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:13:9-45
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:18:9-45
 	android:dataExtractionRules
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:7:9-65
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:12:9-65
 activity#com.fabio.psatime.MainActivity
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:14:9-22:20
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:19:9-27:20
 	android:exported
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:21:13-36
 	android:name
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:15:13-41
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:20:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:25:27-74
+receiver#com.fabio.psatime.receiver.ReminderReceiver
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:30:9-36:20
+	android:enabled
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:30:19-60
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:33:13-35:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:34:17-78
+	android:name
+		ADDED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml:34:25-76
 uses-sdk
 INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Fabio\AndroidStudioProjects\PSATime\app\src\main\AndroidManifest.xml

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">PSA Time</string>
+    <string name="history_title">Histórico de Resultados</string>
 
     <!-- Status Vazio (Neutro) -->
     <string name="status_empty_title">Bem-vindo!</string>
@@ -7,13 +8,17 @@
 
     <!-- Status Normal (Verde) -->
     <string name="status_normal_title">Nível Normal</string>
-    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura (abaixo de 0.4). Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
+    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura. Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
 
     <!-- Status Atenção (Amarelo) -->
-    <string name="status_warning_title">Status: Atenção! Variação >= 0.4</string>
-    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal (0,4 ou mais). \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação acima de 0.4, é importante procurar seu médico.</string>
+    <string name="status_warning_title">Atenção! Variação elevada.</string>
+    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal. \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação elevada, é importante procurar seu médico.</string>
 
     <!-- Status Perigo (Vermelho) -->
-    <string name="status_danger_title">Status: Ação Imediata!</string>
+    <string name="status_danger_title">Ação Imediata!</string>
     <string name="status_danger_message">O resultado de acompanhamento após 3 meses confirmou ou aumentou a variação do PSA.\n\nOrientação importante: agora é hora de fazer uma Ressonância de Próstata o quanto antes e procurar seu médico com urgência.\n\nA detecção precoce faz toda a diferença!</string>
+
+    <!-- NOVO: Status Crítico Inicial (> 10) -->
+    <string name="status_critical_high_title">Alta suspeita. Investigar com urgência.</string>
+    <string name="status_critical_high_message">Valores acima de 10 ng/mL frequentemente indicam quadros mais graves ou inflamatórios severos.\n\nSempre interprete qualquer resultado com um médico ou urologista.</string>
 </resources>

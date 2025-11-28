@@ -2,30 +2,72 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="ic_launcher_background">#FFFFFF</color>
-    <color name="status_green">#FF008761</color>
-    <color name="status_green_bg">#FFD6F7E9</color>
-    <color name="status_neutral">#FF6E7178</color>
-    <color name="status_neutral_bg">#FFEFEFF1</color>
-    <color name="status_red">#FFBA1A1A</color>
-    <color name="status_red_bg">#FFFFDAD6</color>
-    <color name="status_yellow">#FFB54A00</color>
-    <color name="status_yellow_bg">#FFFFF3D5</color>
+    <color name="status_dark_neutral_bg">#2B2D30</color>
+    <color name="status_green">#3b8d44</color>
+    <color name="status_green_bg">#F1FFF2</color>
+    <color name="status_neutral">#6C707E</color>
+    <color name="status_neutral_bg">#F0F1F2</color>
+    <color name="status_red">#d13233</color>
+    <color name="status_red_bg">#FCEBEB</color>
+    <color name="status_yellow">#f57c24</color>
+    <color name="status_yellow_bg">#FFF7EF</color>
+    <color name="studio_dark_background">#1E1F22</color>
+    <color name="studio_dark_on_primary">#FFFFFF</color>
+    <color name="studio_dark_primary">#3574F0</color>
+    <color name="studio_dark_selection_bg">#25324D</color>
+    <color name="studio_dark_surface">#2B2D30</color>
+    <color name="studio_dark_text_primary">#DFE1E5</color>
+    <color name="studio_light_background">#FFFFFF</color>
+    <color name="studio_light_on_primary">#FFFFFF</color>
+    <color name="studio_light_primary">#3574F0</color>
+    <color name="studio_light_selection_bg">#E8F0FE</color>
+    <color name="studio_light_surface">#F2F2F2</color>
+    <color name="studio_light_text_primary">#1C1C1C</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">PSA Time</string>
+    <string name="history_title">Histórico de Resultados</string>
+    <string name="status_critical_high_message">Valores acima de 10 ng/mL frequentemente indicam quadros mais graves ou inflamatórios severos.\n\nSempre interprete qualquer resultado com um médico ou urologista.</string>
+    <string name="status_critical_high_title">Alta suspeita. Investigar com urgência.</string>
     <string name="status_danger_message">O resultado de acompanhamento após 3 meses confirmou ou aumentou a variação do PSA.\n\nOrientação importante: agora é hora de fazer uma Ressonância de Próstata o quanto antes e procurar seu médico com urgência.\n\nA detecção precoce faz toda a diferença!</string>
-    <string name="status_danger_title">Status: Ação Imediata!</string>
+    <string name="status_danger_title">Ação Imediata!</string>
     <string name="status_empty_message">Insira valores para receber seus alertas de saúde aqui.</string>
     <string name="status_empty_title">Bem-vindo!</string>
-    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura (abaixo de 0.4). Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
+    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura. Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
     <string name="status_normal_title">Nível Normal</string>
-    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal (0,4 ou mais). \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação acima de 0.4, é importante procurar seu médico.</string>
-    <string name="status_warning_title">Status: Atenção! Variação >= 0.4</string>
-    <style name="Base.Theme.PSATime" parent="Theme.Material3.Light.NoActionBar"> 
+    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal. \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação elevada, é importante procurar seu médico.</string>
+    <string name="status_warning_title">Atenção! Variação elevada.</string>
+    <style name="Base.Theme.PSATime" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/studio_light_primary</item>
+        <item name="colorOnPrimary">@color/studio_light_on_primary</item>
+
+        
+        <item name="colorSecondary">@color/studio_light_primary</item>
+        <item name="colorOnSecondary">@color/studio_light_on_primary</item>
+        <item name="colorAccent">@color/studio_light_primary</item>
+        <item name="colorControlActivated">@color/studio_light_primary</item>
+
         
         
+        <item name="colorSecondaryContainer">@color/studio_light_selection_bg</item>
+        <item name="colorOnSecondaryContainer">@color/studio_light_primary</item>
+
+        
+        <item name="android:colorBackground">@color/studio_light_background</item>
+        <item name="colorSurface">@color/studio_light_surface</item>
+
+        <item name="colorSurfaceContainerLowest">@color/studio_light_background</item>
+        <item name="colorSurfaceContainer">@color/studio_light_surface</item>
+
+        
+        <item name="colorOnSurface">@color/studio_light_text_primary</item>
+
+        <item name="android:colorAccent">@color/studio_light_primary</item>
+        <item name="android:colorControlActivated">@color/studio_light_primary</item>
     </style>
     <style name="Theme.PSATime" parent="Base.Theme.PSATime"/>
-    <style name="Theme.PSATime.Light" parent="Theme.Material3.Light.NoActionBar">
-        
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

@@ -1,23 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.PSATime" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- CORES DARK MODE -->
+        <item name="colorPrimary">@color/studio_dark_primary</item>
+        <item name="colorOnPrimary">@color/studio_dark_on_primary</item>
 
-    <!-- Base Theme Night -->
-    <style name="Base.Theme.PSATime" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Fundo principal da Activity -->
-        <item name="android:windowBackground">@android:color/black</item>
+        <!-- Correção dos Controles no Dark Mode -->
+        <item name="colorSecondary">@color/studio_dark_primary</item>
+        <item name="colorAccent">@color/studio_dark_primary</item>
+        <item name="colorControlActivated">@color/studio_dark_primary</item>
 
-        <!-- Edge-to-Edge dark -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <!-- CORREÇÃO DEFINITIVA (Força bruta do Android Nativo) -->
+        <!-- Adicione estas duas linhas no seu Tema Claro também! -->
+        <item name="android:colorAccent">@color/studio_dark_primary</item>
+        <item name="android:colorControlActivated">@color/studio_dark_primary</item>
 
-        <!-- Controle total dos tons do Material 3 -->
-        <item name="colorSurfaceContainerLowest">@android:color/black</item>
-        <item name="colorSurface">@android:color/black</item>
+        <!-- CORREÇÃO DO FUNDO DE SELEÇÃO DARK -->
+        <item name="colorSecondaryContainer">@color/studio_dark_selection_bg</item>
+        <item name="colorOnSecondaryContainer">@color/studio_dark_primary</item>
+
+        <!-- Fundos -->
+        <item name="android:colorBackground">@color/studio_dark_background</item>
+        <item name="colorSurface">@color/studio_dark_surface</item>
+
+        <item name="colorSurfaceContainerLowest">@color/studio_dark_background</item>
+        <item name="colorSurfaceContainer">@color/studio_dark_surface</item>
+
+        <!-- Texto -->
+        <item name="colorOnSurface">@color/studio_dark_text_primary</item>
     </style>
 
-    <!-- Tema aplicado no modo escuro -->
     <style name="Theme.PSATime" parent="Base.Theme.PSATime" />
-
 </resources>
+
+    <!--    &lt;!&ndash; Base Theme Night &ndash;&gt;-->
+<!--    <style name="Base.Theme.PSATime" parent="Theme.Material3.Dark.NoActionBar">-->
+<!--        &lt;!&ndash; Fundo principal da Activity &ndash;&gt;-->
+<!--        <item name="android:windowBackground">@android:color/black</item>-->
+
+<!--        &lt;!&ndash; Edge-to-Edge dark &ndash;&gt;-->
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+<!--        <item name="android:navigationBarColor">@android:color/transparent</item>-->
+<!--        <item name="android:windowLightStatusBar">false</item>-->
+<!--        <item name="android:windowLightNavigationBar">false</item>-->
+
+<!--        &lt;!&ndash; Controle total dos tons do Material 3 &ndash;&gt;-->
+<!--        <item name="colorSurfaceContainerLowest">@android:color/black</item>-->
+<!--        <item name="colorSurface">@android:color/black</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; Tema aplicado no modo escuro &ndash;&gt;-->
+<!--    <style name="Theme.PSATime" parent="Base.Theme.PSATime" />-->

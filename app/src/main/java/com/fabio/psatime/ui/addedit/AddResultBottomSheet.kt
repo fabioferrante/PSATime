@@ -17,7 +17,7 @@ class AddResultBottomSheet : BottomSheetDialogFragment() {
     companion object {
         const val TAG = "AddResultBottomSheet"
 
-        // Método estático para criar instância com argumentos (edição)
+        // Mét odo estático para criar instância com argumentos (edição)
         fun newInstance(resultId: Int, year: Int, value: Float): AddResultBottomSheet {
             val fragment = AddResultBottomSheet()
             val args = Bundle()
@@ -88,7 +88,7 @@ class AddResultBottomSheet : BottomSheetDialogFragment() {
             return
         }
 
-        if (value == null || value < 0f || value > 7f) {
+        if (value == null || value < 0f || value > 500f) {
             Toast.makeText(requireContext(), "Valor inválido. Insira um valor de PSA entre 0 e 7.", Toast.LENGTH_SHORT).show()
             return
         }

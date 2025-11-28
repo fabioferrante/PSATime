@@ -2140,6 +2140,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color status_dark_neutral_bg
 color status_green
 color status_green_bg
 color status_neutral
@@ -2148,6 +2149,18 @@ color status_red
 color status_red_bg
 color status_yellow
 color status_yellow_bg
+color studio_dark_background
+color studio_dark_on_primary
+color studio_dark_primary
+color studio_dark_selection_bg
+color studio_dark_surface
+color studio_dark_text_primary
+color studio_light_background
+color studio_light_on_primary
+color studio_light_primary
+color studio_light_selection_bg
+color studio_light_surface
+color studio_light_text_primary
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -3042,6 +3055,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_dialog_rounded
 drawable bg_drag_handle
 drawable bg_history_badge_green
 drawable bg_history_badge_red
@@ -3062,6 +3076,8 @@ drawable design_snackbar_background
 drawable ic_add
 drawable ic_arrow_back
 drawable ic_arrow_back_black_24
+drawable ic_btc
+drawable ic_btc_logo
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3072,6 +3088,7 @@ drawable ic_check_circle
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
+drawable ic_download
 drawable ic_edit
 drawable ic_error
 drawable ic_flask
@@ -3086,8 +3103,11 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_qr_code_btc_placeholder
+drawable ic_restore
 drawable ic_search_black_24
 drawable ic_settings
+drawable ic_twitter_logo
 drawable ic_warning
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3270,7 +3290,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_backup_export
+id btn_backup_import
 id btn_cancel
+id btn_cancel_delete
+id btn_confirm_delete
 id btn_delete_item
 id btn_edit_item
 id btn_save
@@ -3414,10 +3438,13 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ivQrCodeBtc
+id ivTwitterIcon
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutTwitter
 id left
 id leftToRight
 id legacy
@@ -3561,6 +3588,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rodape_info
 id rounded
 id row_index_key
 id rtl
@@ -3679,7 +3707,11 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvEnderecoBtc
+id tvTwitterHandle
 id tv_bottom_sheet_title
+id tv_dialog_message
+id tv_dialog_title
 id tv_result_badge
 id tv_result_date
 id tv_result_value
@@ -3842,6 +3874,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_delete_confirmation
 layout fragment_dashboard
 layout fragment_settings
 layout ime_base_split_test_activity
@@ -3968,6 +4001,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
+string history_title
 string icon_content_description
 string item_view_role_description
 string lib_name
@@ -4085,6 +4119,8 @@ string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string status_critical_high_message
+string status_critical_high_title
 string status_danger_message
 string status_danger_title
 string status_empty_message
@@ -4723,7 +4759,6 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_PSATime
-style Theme_PSATime_Light
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -4838,6 +4873,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style ToolbarTitleStyle
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

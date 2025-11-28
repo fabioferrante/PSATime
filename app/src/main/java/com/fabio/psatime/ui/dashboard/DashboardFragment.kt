@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -61,15 +63,12 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        // Passamos as funções de callback para o Adapter
         historyAdapter = PsaHistoryAdapter(
             onEditClick = { result ->
-                // Abre o BottomSheet em modo de edição
                 val bottomSheet = AddResultBottomSheet.newInstance(result.id, result.year, result.value)
                 bottomSheet.show(parentFragmentManager, AddResultBottomSheet.TAG)
             },
             onDeleteClick = { result ->
-                // Mostra confirmação antes de excluir
                 showDeleteConfirmationDialog(result)
             }
         )
@@ -82,15 +81,26 @@ class DashboardFragment : Fragment() {
     }
 
     private fun showDeleteConfirmationDialog(result: PsaResult) {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Excluir Resultado")
-            .setMessage("Tem certeza que deseja excluir o registro de ${result.year}?")
-            .setPositiveButton("Excluir") { _, _ ->
-                viewModel.deleteResult(result)
-                Toast.makeText(requireContext(), "Registro excluído", Toast.LENGTH_SHORT).show()
-            }
-            .setNegativeButton("Cancelar", null)
-            .show()
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_delete_confirmation, null)
+
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
+
+        dialogView.findViewById<TextView>(R.id.tv_dialog_message).text = "Tem certeza que deseja excluir o registro de ${result.year}?"
+
+        dialogView.findViewById<Button>(R.id.btn_cancel_delete).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialogView.findViewById<Button>(R.id.btn_confirm_delete).setOnClickListener {
+            viewModel.deleteResult(result)
+            Toast.makeText(requireContext(), "Registro excluído", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
 
     private fun setupObservers() {
@@ -103,45 +113,53 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    // ... (função updateStatusCard permanece igual, não precisa alterar) ...
     private fun updateStatusCard(status: PsaStatus) {
         val context = requireContext()
+
+        // Helper para configurar cores e textos
+        fun setCardState(bgColorRes: Int, contentColorRes: Int, iconRes: Int, titleRes: Int, messageRes: Int) {
+            binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, bgColorRes))
+            binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, contentColorRes))
+            binding.imgStatusIcon.setImageResource(iconRes)
+
+            binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, contentColorRes))
+            binding.tvStatusTitle.setText(titleRes)
+
+            binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, contentColorRes))
+            binding.tvStatusMessage.setText(messageRes)
+        }
+
         when (status) {
             is PsaStatus.Empty -> {
-                binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, R.color.status_neutral_bg))
-                binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, R.color.status_neutral))
-                binding.imgStatusIcon.setImageResource(R.drawable.ic_warning)
-                binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, R.color.status_neutral))
-                binding.tvStatusTitle.setText(R.string.status_empty_title)
-                binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.status_neutral))
-                binding.tvStatusMessage.setText(R.string.status_empty_message)
+                setCardState(
+                    R.color.status_neutral_bg, R.color.status_neutral, R.drawable.ic_warning,
+                    R.string.status_empty_title, R.string.status_empty_message
+                )
             }
             is PsaStatus.Normal -> {
-                binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, R.color.status_green_bg))
-                binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, R.color.status_green))
-                binding.imgStatusIcon.setImageResource(R.drawable.ic_check_circle)
-                binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, R.color.status_green))
-                binding.tvStatusTitle.setText(R.string.status_normal_title)
-                binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.status_green))
-                binding.tvStatusMessage.setText(R.string.status_normal_message)
+                setCardState(
+                    R.color.status_green_bg, R.color.status_green, R.drawable.ic_check_circle,
+                    R.string.status_normal_title, R.string.status_normal_message
+                )
             }
             is PsaStatus.Warning -> {
-                binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, R.color.status_yellow_bg))
-                binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, R.color.status_yellow))
-                binding.imgStatusIcon.setImageResource(R.drawable.ic_warning)
-                binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, R.color.status_yellow))
-                binding.tvStatusTitle.setText(R.string.status_warning_title)
-                binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.status_yellow))
-                binding.tvStatusMessage.setText(R.string.status_warning_message)
+                setCardState(
+                    R.color.status_yellow_bg, R.color.status_yellow, R.drawable.ic_warning,
+                    R.string.status_warning_title, R.string.status_warning_message
+                )
             }
             is PsaStatus.Danger -> {
-                binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, R.color.status_red_bg))
-                binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, R.color.status_red))
-                binding.imgStatusIcon.setImageResource(R.drawable.ic_error)
-                binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, R.color.status_red))
-                binding.tvStatusTitle.setText(R.string.status_danger_title)
-                binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.status_red))
-                binding.tvStatusMessage.setText(R.string.status_danger_message)
+                setCardState(
+                    R.color.status_red_bg, R.color.status_red, R.drawable.ic_error,
+                    R.string.status_danger_title, R.string.status_danger_message
+                )
+            }
+            // NOVO ESTADO: Crítico Inicial (> 10)
+            is PsaStatus.CriticalHigh -> {
+                setCardState(
+                    R.color.status_red_bg, R.color.status_red, R.drawable.ic_error,
+                    R.string.status_critical_high_title, R.string.status_critical_high_message
+                )
             }
         }
     }

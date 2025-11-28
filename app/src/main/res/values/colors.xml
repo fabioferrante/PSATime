@@ -3,19 +3,37 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Cores Status Neutro (Vazio) -->
-    <color name="status_neutral">#FF6E7178</color>
-    <color name="status_neutral_bg">#FFEFEFF1</color>
+    <!-- PALETA ANDROID STUDIO OTTER (New UI) -->
 
-    <!-- Cores Status Verde -->
-    <color name="status_green">#FF008761</color>
-    <color name="status_green_bg">#FFD6F7E9</color>
+    <!-- LIGHT MODE -->
+    <color name="studio_light_primary">#3574F0</color>
+    <color name="studio_light_on_primary">#FFFFFF</color>
+    <color name="studio_light_background">#FFFFFF</color>
+    <color name="studio_light_surface">#F2F2F2</color>
+    <color name="studio_light_text_primary">#1C1C1C</color>
+    <!-- NOVO: Azul clarinho para fundo de seleção (Coerente com o Azul Primário) -->
+    <color name="studio_light_selection_bg">#E8F0FE</color>
 
-    <!-- Cores Status Amarelo -->
-    <color name="status_yellow">#FFB54A00</color>
-    <color name="status_yellow_bg">#FFFFF3D5</color>
+    <!-- DARK MODE -->
+    <color name="studio_dark_primary">#3574F0</color>
+    <color name="studio_dark_on_primary">#FFFFFF</color>
+    <color name="studio_dark_background">#1E1F22</color>
+    <color name="studio_dark_surface">#2B2D30</color>
+    <color name="studio_dark_text_primary">#DFE1E5</color>
+    <!-- NOVO: Azul escuro sutil para seleção no modo noturno -->
+    <color name="studio_dark_selection_bg">#25324D</color>
 
-    <!-- Cores Status Vermelho -->
-    <color name="status_red">#FFBA1A1A</color>
-    <color name="status_red_bg">#FFFFDAD6</color>
+    <!-- Cores de Status -->
+    <color name="status_green">#3b8d44</color>
+    <color name="status_green_bg">#F1FFF2</color>
+    <color name="status_yellow">#f57c24</color>
+    <color name="status_yellow_bg">#FFF7EF</color>
+    <color name="status_red">#d13233</color>
+<!--    <color name="status_red">#E55760</color>-->
+    <color name="status_red_bg">#FCEBEB</color>
+
+    <color name="status_neutral">#6C707E</color>
+    <color name="status_neutral_bg">#F0F1F2</color>
+
+    <color name="status_dark_neutral_bg">#2B2D30</color>
 </resources>

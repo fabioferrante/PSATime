@@ -4,15 +4,17 @@ package com.fabio.psatime.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.fabio.psatime.R;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,30 +24,66 @@ public final class FragmentSettingsBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout btnBackupExport;
+
+  @NonNull
+  public final LinearLayout btnBackupImport;
+
+  @NonNull
+  public final ImageView ivQrCodeBtc;
+
+  @NonNull
+  public final ImageView ivTwitterIcon;
+
+  @NonNull
+  public final LinearLayout layoutTwitter;
+
+  @NonNull
   public final RadioGroup radioGroupTheme;
 
   @NonNull
-  public final RadioButton radioThemeDark;
+  public final MaterialRadioButton radioThemeDark;
 
   @NonNull
-  public final RadioButton radioThemeLight;
+  public final MaterialRadioButton radioThemeLight;
 
   @NonNull
-  public final RadioButton radioThemeSystem;
+  public final MaterialRadioButton radioThemeSystem;
+
+  @NonNull
+  public final LinearLayout rodapeInfo;
 
   @NonNull
   public final MaterialToolbar toolbarSettings;
 
+  @NonNull
+  public final TextView tvEnderecoBtc;
+
+  @NonNull
+  public final TextView tvTwitterHandle;
+
   private FragmentSettingsBinding(@NonNull LinearLayout rootView,
-      @NonNull RadioGroup radioGroupTheme, @NonNull RadioButton radioThemeDark,
-      @NonNull RadioButton radioThemeLight, @NonNull RadioButton radioThemeSystem,
-      @NonNull MaterialToolbar toolbarSettings) {
+      @NonNull LinearLayout btnBackupExport, @NonNull LinearLayout btnBackupImport,
+      @NonNull ImageView ivQrCodeBtc, @NonNull ImageView ivTwitterIcon,
+      @NonNull LinearLayout layoutTwitter, @NonNull RadioGroup radioGroupTheme,
+      @NonNull MaterialRadioButton radioThemeDark, @NonNull MaterialRadioButton radioThemeLight,
+      @NonNull MaterialRadioButton radioThemeSystem, @NonNull LinearLayout rodapeInfo,
+      @NonNull MaterialToolbar toolbarSettings, @NonNull TextView tvEnderecoBtc,
+      @NonNull TextView tvTwitterHandle) {
     this.rootView = rootView;
+    this.btnBackupExport = btnBackupExport;
+    this.btnBackupImport = btnBackupImport;
+    this.ivQrCodeBtc = ivQrCodeBtc;
+    this.ivTwitterIcon = ivTwitterIcon;
+    this.layoutTwitter = layoutTwitter;
     this.radioGroupTheme = radioGroupTheme;
     this.radioThemeDark = radioThemeDark;
     this.radioThemeLight = radioThemeLight;
     this.radioThemeSystem = radioThemeSystem;
+    this.rodapeInfo = rodapeInfo;
     this.toolbarSettings = toolbarSettings;
+    this.tvEnderecoBtc = tvEnderecoBtc;
+    this.tvTwitterHandle = tvTwitterHandle;
   }
 
   @Override
@@ -75,6 +113,36 @@ public final class FragmentSettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_backup_export;
+      LinearLayout btnBackupExport = ViewBindings.findChildViewById(rootView, id);
+      if (btnBackupExport == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_backup_import;
+      LinearLayout btnBackupImport = ViewBindings.findChildViewById(rootView, id);
+      if (btnBackupImport == null) {
+        break missingId;
+      }
+
+      id = R.id.ivQrCodeBtc;
+      ImageView ivQrCodeBtc = ViewBindings.findChildViewById(rootView, id);
+      if (ivQrCodeBtc == null) {
+        break missingId;
+      }
+
+      id = R.id.ivTwitterIcon;
+      ImageView ivTwitterIcon = ViewBindings.findChildViewById(rootView, id);
+      if (ivTwitterIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutTwitter;
+      LinearLayout layoutTwitter = ViewBindings.findChildViewById(rootView, id);
+      if (layoutTwitter == null) {
+        break missingId;
+      }
+
       id = R.id.radio_group_theme;
       RadioGroup radioGroupTheme = ViewBindings.findChildViewById(rootView, id);
       if (radioGroupTheme == null) {
@@ -82,20 +150,26 @@ public final class FragmentSettingsBinding implements ViewBinding {
       }
 
       id = R.id.radio_theme_dark;
-      RadioButton radioThemeDark = ViewBindings.findChildViewById(rootView, id);
+      MaterialRadioButton radioThemeDark = ViewBindings.findChildViewById(rootView, id);
       if (radioThemeDark == null) {
         break missingId;
       }
 
       id = R.id.radio_theme_light;
-      RadioButton radioThemeLight = ViewBindings.findChildViewById(rootView, id);
+      MaterialRadioButton radioThemeLight = ViewBindings.findChildViewById(rootView, id);
       if (radioThemeLight == null) {
         break missingId;
       }
 
       id = R.id.radio_theme_system;
-      RadioButton radioThemeSystem = ViewBindings.findChildViewById(rootView, id);
+      MaterialRadioButton radioThemeSystem = ViewBindings.findChildViewById(rootView, id);
       if (radioThemeSystem == null) {
+        break missingId;
+      }
+
+      id = R.id.rodape_info;
+      LinearLayout rodapeInfo = ViewBindings.findChildViewById(rootView, id);
+      if (rodapeInfo == null) {
         break missingId;
       }
 
@@ -105,8 +179,22 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSettingsBinding((LinearLayout) rootView, radioGroupTheme, radioThemeDark,
-          radioThemeLight, radioThemeSystem, toolbarSettings);
+      id = R.id.tvEnderecoBtc;
+      TextView tvEnderecoBtc = ViewBindings.findChildViewById(rootView, id);
+      if (tvEnderecoBtc == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTwitterHandle;
+      TextView tvTwitterHandle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTwitterHandle == null) {
+        break missingId;
+      }
+
+      return new FragmentSettingsBinding((LinearLayout) rootView, btnBackupExport, btnBackupImport,
+          ivQrCodeBtc, ivTwitterIcon, layoutTwitter, radioGroupTheme, radioThemeDark,
+          radioThemeLight, radioThemeSystem, rodapeInfo, toolbarSettings, tvEnderecoBtc,
+          tvTwitterHandle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

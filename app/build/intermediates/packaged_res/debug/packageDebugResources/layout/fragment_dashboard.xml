@@ -22,7 +22,10 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/dashboard_menu"
             app:title="PSA Time"
-            app:titleCentered="false" />
+            app:titleCentered="false"
+            app:contentInsetStartWithNavigation="0dp"
+            app:titleTextAppearance="@style/ToolbarTitleStyle" /> <!-- CORREÇÃO AQUI -->
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Conteúdo com Scroll -->
@@ -41,7 +44,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="10dp"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp"
             app:strokeWidth="0dp"> <!-- CORREÇÃO 2: Fundo do LinearLayout -->
