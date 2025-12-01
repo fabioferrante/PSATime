@@ -39,7 +39,16 @@ public final class FragmentSettingsBinding implements ViewBinding {
   public final LinearLayout layoutTwitter;
 
   @NonNull
+  public final RadioGroup radioGroupLanguage;
+
+  @NonNull
   public final RadioGroup radioGroupTheme;
+
+  @NonNull
+  public final MaterialRadioButton radioLangEn;
+
+  @NonNull
+  public final MaterialRadioButton radioLangPt;
 
   @NonNull
   public final MaterialRadioButton radioThemeDark;
@@ -65,18 +74,22 @@ public final class FragmentSettingsBinding implements ViewBinding {
   private FragmentSettingsBinding(@NonNull LinearLayout rootView,
       @NonNull LinearLayout btnBackupExport, @NonNull LinearLayout btnBackupImport,
       @NonNull ImageView ivQrCodeBtc, @NonNull ImageView ivTwitterIcon,
-      @NonNull LinearLayout layoutTwitter, @NonNull RadioGroup radioGroupTheme,
-      @NonNull MaterialRadioButton radioThemeDark, @NonNull MaterialRadioButton radioThemeLight,
-      @NonNull MaterialRadioButton radioThemeSystem, @NonNull LinearLayout rodapeInfo,
-      @NonNull MaterialToolbar toolbarSettings, @NonNull TextView tvEnderecoBtc,
-      @NonNull TextView tvTwitterHandle) {
+      @NonNull LinearLayout layoutTwitter, @NonNull RadioGroup radioGroupLanguage,
+      @NonNull RadioGroup radioGroupTheme, @NonNull MaterialRadioButton radioLangEn,
+      @NonNull MaterialRadioButton radioLangPt, @NonNull MaterialRadioButton radioThemeDark,
+      @NonNull MaterialRadioButton radioThemeLight, @NonNull MaterialRadioButton radioThemeSystem,
+      @NonNull LinearLayout rodapeInfo, @NonNull MaterialToolbar toolbarSettings,
+      @NonNull TextView tvEnderecoBtc, @NonNull TextView tvTwitterHandle) {
     this.rootView = rootView;
     this.btnBackupExport = btnBackupExport;
     this.btnBackupImport = btnBackupImport;
     this.ivQrCodeBtc = ivQrCodeBtc;
     this.ivTwitterIcon = ivTwitterIcon;
     this.layoutTwitter = layoutTwitter;
+    this.radioGroupLanguage = radioGroupLanguage;
     this.radioGroupTheme = radioGroupTheme;
+    this.radioLangEn = radioLangEn;
+    this.radioLangPt = radioLangPt;
     this.radioThemeDark = radioThemeDark;
     this.radioThemeLight = radioThemeLight;
     this.radioThemeSystem = radioThemeSystem;
@@ -143,9 +156,27 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.radio_group_language;
+      RadioGroup radioGroupLanguage = ViewBindings.findChildViewById(rootView, id);
+      if (radioGroupLanguage == null) {
+        break missingId;
+      }
+
       id = R.id.radio_group_theme;
       RadioGroup radioGroupTheme = ViewBindings.findChildViewById(rootView, id);
       if (radioGroupTheme == null) {
+        break missingId;
+      }
+
+      id = R.id.radio_lang_en;
+      MaterialRadioButton radioLangEn = ViewBindings.findChildViewById(rootView, id);
+      if (radioLangEn == null) {
+        break missingId;
+      }
+
+      id = R.id.radio_lang_pt;
+      MaterialRadioButton radioLangPt = ViewBindings.findChildViewById(rootView, id);
+      if (radioLangPt == null) {
         break missingId;
       }
 
@@ -192,9 +223,9 @@ public final class FragmentSettingsBinding implements ViewBinding {
       }
 
       return new FragmentSettingsBinding((LinearLayout) rootView, btnBackupExport, btnBackupImport,
-          ivQrCodeBtc, ivTwitterIcon, layoutTwitter, radioGroupTheme, radioThemeDark,
-          radioThemeLight, radioThemeSystem, rodapeInfo, toolbarSettings, tvEnderecoBtc,
-          tvTwitterHandle);
+          ivQrCodeBtc, ivTwitterIcon, layoutTwitter, radioGroupLanguage, radioGroupTheme,
+          radioLangEn, radioLangPt, radioThemeDark, radioThemeLight, radioThemeSystem, rodapeInfo,
+          toolbarSettings, tvEnderecoBtc, tvTwitterHandle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

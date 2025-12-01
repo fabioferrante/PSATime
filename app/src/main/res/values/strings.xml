@@ -1,48 +1,96 @@
 <resources>
     <string name="app_name">PSA Time</string>
-    <string name="history_title">Histórico de Resultados</string>
 
-    <!-- Status Vazio (Neutro) -->
-    <string name="status_empty_title">Bem-vindo!</string>
-    <string name="status_empty_message">Insira valores para receber seus alertas de saúde aqui.</string>
+    <!-- Dashboard -->
+    <string name="history_title">Results History</string>
 
-    <!-- Status Normal (Verde) -->
-    <string name="status_normal_title">Nível Normal</string>
-    <string name="status_normal_message">Seus resultados estão dentro da faixa de variação segura. Continue monitorando anualmente e lembre-se do jejum de 3 dias para relações sexuais antes do exame.</string>
+    <!-- Status Cards -->
+    <string name="status_empty_title">Welcome!</string>
+    <string name="status_empty_message">Enter values to receive your health alerts here.</string>
 
-    <!-- Status Atenção (Amarelo) -->
-    <string name="status_warning_title">Atenção! Variação elevada.</string>
-    <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal. \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação elevada, é importante procurar seu médico.</string>
+    <string name="status_normal_title">Normal Level</string>
+    <string name="status_normal_message">Your results are within the safe range. Continue monitoring annually and remember to fast for 3 days before sexual intercourse following the test.</string>
 
-    <!-- Status Perigo (Vermelho) -->
-    <string name="status_danger_title">Ação Imediata!</string>
-    <string name="status_danger_message">O resultado de acompanhamento após 3 meses confirmou ou aumentou a variação do PSA.\n\nOrientação importante: agora é hora de fazer uma Ressonância de Próstata o quanto antes e procurar seu médico com urgência.\n\nA detecção precoce faz toda a diferença!</string>
+    <string name="status_warning_title">Warning! High variation.</string>
+    <!-- CORREÇÃO: "it\'s" escapado corretamente -->
+    <string name="status_warning_message">Your PSA level has fluctuated slightly above the ideal range. \n\nRecommendation: Repeat the test in about 3 months. If the result decreases, it\'s likely due to incorrect fasting. However, if the value increases or continues to fluctuate significantly, it\'s important to consult your doctor.</string>
 
-    <!-- NOVO: Status Crítico Inicial (> 10) -->
-    <string name="status_critical_high_title">Alta suspeita. Investigar com urgência.</string>
-    <string name="status_critical_high_message">Valores acima de 10 ng/mL frequentemente indicam quadros mais graves ou inflamatórios severos.\n\nSempre interprete qualquer resultado com um médico ou urologista.</string>
+    <string name="status_danger_title">Immediate action!</string>
+    <!-- CORREÇÃO: Removido "TThe" duplicado -->
+    <string name="status_danger_message">The follow-up result after 3 months confirmed or increased the PSA variation.\n\nImportant advice: now is the time to have a prostate MRI as soon as possible and see your doctor urgently.\n\nEarly detection makes all the difference!</string>
 
-    <!-- Termos de Uso -->
-    <string name="terms_title">Termos de Uso</string>
-    <string name="terms_subtitle">Leia com atenção antes de continuar</string>
-    <string name="terms_button_accept">Aceito e Continuar</string>
+    <string name="status_critical_high_title">High Suspicion. Investigate Urgently.</string>
+    <string name="status_critical_high_message">Values above 10 ng/mL often indicate severe conditions or inflammation.\n\nAlways interpret any result with a doctor or urologist.</string>
+
+    <!-- Terms of Use (AS QUE ESTAVAM FALTANDO) -->
+    <string name="terms_title">Terms of Use</string>
+    <string name="terms_subtitle">Read carefully before continuing</string>
+    <string name="terms_button_accept">I Accept and Continue</string>
     <string name="terms_content">
-O PSA Time é um aplicativo destinado exclusivamente ao acompanhamento e organização de informações relacionadas ao PSA (Antígeno Prostático Específico).
-Este aplicativo não realiza diagnóstico, não substitui consulta médica, e não oferece recomendações clínicas.\n\n
+PSA Time is an application designed exclusively for monitoring and organizing information related to PSA (Prostate Specific Antigen).
+This application does not perform diagnosis, does not replace medical consultation, and does not offer clinical recommendations.\n\n
 
-Os valores, alertas, faixas de risco e análises apresentados no PSA Time têm caráter informativo e educacional, servindo apenas como apoio para o monitoramento pessoal da saúde da próstata.
-Qualquer decisão relacionada à saúde deve sempre ser tomada em conjunto com um médico ou urologista, profissional habilitado para interpretar exames, sintomas e histórico clínico.\n\n
+The values, alerts, risk ranges, and analyses presented in PSA Time are informative and educational, serving only as support for personal prostate health monitoring.
+Any health-related decision must always be made in conjunction with a doctor or urologist, a professional qualified to interpret exams, symptoms, and clinical history.\n\n
 
-O usuário é o único responsável pelas informações inseridas no aplicativo, bem como pelas decisões tomadas com base nos dados exibidos.
-O PSA Time não coleta, transmite ou compartilha informações sem consentimento do usuário, e todo dado inserido é de responsabilidade exclusiva do próprio usuário em seu dispositivo.\n\n
+The user is solely responsible for the information entered in the application, as well as for the decisions made based on the displayed data.
+PSA Time does not collect, transmit, or share information without user consent, and all data entered is the sole responsibility of the user on their device.\n\n
 
-Ao utilizar o app, você concorda que:\n
-• Reconhece que o PSA Time não fornece opinião médica.\n
-• Compreende que resultados, gráficos e alertas são estimativas informativas.\n
-• Assume total responsabilidade pelas informações cadastradas e pelo uso dos dados gerados.\n
-• Concorda em buscar atendimento médico sempre que houver dúvida, alteração ou preocupação.\n
-• Aceita que o aplicativo pode ser atualizado, modificado ou descontinuado sem aviso prévio.\n\n
+By using the app, you agree that:\n
+• You recognize that PSA Time does not provide medical opinion.\n
+• You understand that results, charts, and alerts are informative estimates.\n
+• You assume full responsibility for the information registered and the use of the generated data.\n
+• You agree to seek medical attention whenever there is doubt, alteration, or concern.\n
+• You accept that the application may be updated, modified, or discontinued without prior notice.\n\n
 
-Se você não concorda com estes termos, não prossiga com o uso do aplicativo.
+If you do not agree with these terms, do not proceed with the use of the application.
     </string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">APPEARANCE</string>
+    <string name="settings_theme_system">System Theme</string>
+    <string name="settings_theme_light">Light Theme</string>
+    <string name="settings_theme_dark">Dark Theme</string>
+
+    <string name="settings_language">LANGUAGE / IDIOMA</string>
+    <string name="settings_lang_en">English (US)</string>
+    <string name="settings_lang_pt">Português (BR)</string>
+
+    <string name="settings_data_backup">DATA AND BACKUP</string>
+    <string name="settings_backup_export">Backup Data</string>
+    <string name="settings_backup_export_desc">Save data to a file</string>
+    <string name="settings_backup_import">Restore Data</string>
+    <string name="settings_backup_import_desc">Load from a saved file</string>
+
+    <string name="settings_others">OTHER SETTINGS</string>
+    <string name="settings_others_desc">Future options will appear here.</string>
+
+    <string name="settings_support_title">Support the project:</string>
+    <string name="settings_dev_by">Developed by Fabio Ferrante</string>
+    <string name="twitter_handle">\@fabioferrante</string>
+
+    <!-- Dialogs & Buttons -->
+    <string name="dialog_delete_title">Delete Result</string>
+    <string name="dialog_delete_message">Are you sure you want to delete the record for %1$d?</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_add_result">New PSA Result</string>
+    <string name="dialog_edit_title">Edit Result</string>
+    <string name="hint_year">Year</string>
+    <string name="hint_value">PSA Value (ng/mL)</string>
+
+    <!-- Toasts -->
+    <string name="toast_backup_success">Backup saved successfully!</string>
+    <string name="toast_restore_success">Data restored successfully!</string>
+    <string name="toast_deleted">Record deleted</string>
+    <string name="toast_address_copied">Bitcoin address copied!</string>
+
+    <!-- Error Messages -->
+    <string name="error_fill_all_fields">Please fill in all fields.</string>
+    <string name="error_invalid_year">Please enter a valid year.</string>
+    <string name="error_invalid_value_range">Invalid value. Enter a PSA value between 0 and 500.</string>
+
+    <string name="btc_support_message">Support for project development</string>
 </resources>

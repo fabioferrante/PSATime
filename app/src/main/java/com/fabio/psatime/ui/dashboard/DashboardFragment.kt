@@ -87,7 +87,13 @@ class DashboardFragment : Fragment() {
             .setView(dialogView)
             .create()
 
-        dialogView.findViewById<TextView>(R.id.tv_dialog_message).text = "Tem certeza que deseja excluir o registro de ${result.year}?"
+        // CORREÇÃO CRUCIAL AQUI: Usando getString com argumento dinâmico
+        // Isso vai pegar "Are you sure..." em EN ou "Tem certeza..." em PT e inserir o ano.
+        dialogView.findViewById<TextView>(R.id.tv_dialog_message).text =
+            getString(R.string.dialog_delete_message, result.year)
+
+        // Título também traduzido
+        dialogView.findViewById<TextView>(R.id.tv_dialog_title).text = getString(R.string.dialog_delete_title)
 
         dialogView.findViewById<Button>(R.id.btn_cancel_delete).setOnClickListener {
             dialog.dismiss()
@@ -95,7 +101,7 @@ class DashboardFragment : Fragment() {
 
         dialogView.findViewById<Button>(R.id.btn_confirm_delete).setOnClickListener {
             viewModel.deleteResult(result)
-            Toast.makeText(requireContext(), "Registro excluído", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.toast_deleted), Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
 
@@ -116,18 +122,14 @@ class DashboardFragment : Fragment() {
     private fun updateStatusCard(status: PsaStatus) {
         val context = requireContext()
 
-        // Helper para configurar cores e textos
         fun setCardState(bgColorRes: Int, contentColorRes: Int, iconRes: Int, titleRes: Int, messageRes: Int) {
             binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, bgColorRes))
 
-            // Ícone e Título continuam coloridos
             binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, contentColorRes))
             binding.imgStatusIcon.setImageResource(iconRes)
             binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, contentColorRes))
             binding.tvStatusTitle.setText(titleRes)
 
-            // AJUSTE TEMPORÁRIO: Mensagem sempre preta (ou cor do tema onSurface)
-            // Em vez de 'contentColorRes', usei a cor 'black' definida em colors.xml ou Color.BLACK
             binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.black))
             binding.tvStatusMessage.setText(messageRes)
         }

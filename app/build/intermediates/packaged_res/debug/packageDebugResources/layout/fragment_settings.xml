@@ -9,7 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.settings.SettingsFragment">
 
-    <!-- Toolbar Fixa -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_settings"
         android:layout_width="match_parent"
@@ -17,9 +16,8 @@
         android:background="?attr/colorSurfaceContainer"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:navigationIconTint="?attr/colorPrimary"
-        app:title="Configurações" />
+        app:title="@string/settings_title" /> <!-- Usando @string -->
 
-    <!-- ScrollView com fillViewport="true" para empurrar o rodapé -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp"
-                android:text="APARÊNCIA"
+                android:text="@string/settings_appearance"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -68,7 +66,7 @@
                         android:button="@null"
                         android:drawableEnd="@android:drawable/btn_radio"
                         android:padding="5dp"
-                        android:text="Tema do Sistema"
+                        android:text="@string/settings_theme_system"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp"
                         android:paddingStart="20sp"
@@ -89,7 +87,7 @@
                         android:button="@null"
                         android:drawableEnd="@android:drawable/btn_radio"
                         android:padding="5dp"
-                        android:text="Tema Claro"
+                        android:text="@string/settings_theme_light"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp"
                         android:paddingStart="20sp"
@@ -110,7 +108,7 @@
                         android:button="@null"
                         android:drawableEnd="@android:drawable/btn_radio"
                         android:padding="5dp"
-                        android:text="Tema Escuro"
+                        android:text="@string/settings_theme_dark"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp"
                         android:paddingStart="20sp"
@@ -121,14 +119,82 @@
                 </RadioGroup>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- SEÇÃO 2: DADOS E BACKUP -->
+            <!-- SEÇÃO 2: IDIOMA (NOVO) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp"
-                android:text="DADOS E BACKUP"
+                android:text="@string/settings_language"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radio_lang_en"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_background_top"
+                        android:button="@null"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:padding="5dp"
+                        android:text="@string/settings_lang_en"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:paddingStart="20sp"
+                        android:buttonTint="?attr/colorPrimary"
+                        app:buttonTint="?attr/colorPrimary"
+                        app:useMaterialThemeColors="false"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="?attr/colorOutlineVariant" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radio_lang_pt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_background_bottom"
+                        android:button="@null"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:padding="5dp"
+                        android:text="@string/settings_lang_pt"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:paddingStart="20sp"
+                        android:buttonTint="?attr/colorPrimary"
+                        app:buttonTint="?attr/colorPrimary"
+                        app:useMaterialThemeColors="false"/>
+
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SEÇÃO 3: DADOS E BACKUP -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/settings_data_backup"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -158,7 +224,7 @@
                         android:focusable="true"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="16dp">
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -175,14 +241,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fazer Backup"
+                                android:text="@string/settings_backup_export"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Salvar dados em arquivo"
+                                android:text="@string/settings_backup_export_desc"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -203,7 +269,7 @@
                         android:focusable="true"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="16dp">
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -221,14 +287,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Restaurar Dados"
+                                android:text="@string/settings_backup_import"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Carregar de um arquivo salvo"
+                                android:text="@string/settings_backup_import_desc"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -237,46 +303,46 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
-                android:text="OUTRAS CONFIGURAÇÕES"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+            <!-- OUTRAS CONFIGURAÇÕES -->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:text="@string/settings_others"-->
+<!--                android:textColor="?attr/colorPrimary"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:strokeColor="?attr/colorOutlineVariant"
-                app:strokeWidth="0dp">
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                app:cardBackgroundColor="?attr/colorSurfaceContainer"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:strokeWidth="0dp">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="Opções futuras aparecerão aqui."
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="16sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:text="@string/settings_others_desc"-->
+<!--                    android:textColor="?attr/colorOnSurfaceVariant"-->
+<!--                    android:textSize="16sp" />-->
 
-            </com.google.android.material.card.MaterialCardView>
+<!--            </com.google.android.material.card.MaterialCardView>-->
 
-            <!-- ESPAÇADOR: Empurra o rodapé para baixo se houver espaço -->
+            <!-- ESPAÇADOR -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:minHeight="40dp" />
 
-            <!-- RODAPÉ DE APOIO INTEGRADO (Cores Adaptadas ao PSATime) -->
+            <!-- RODAPÉ -->
             <LinearLayout
                 android:id="@+id/rodape_info"
                 android:layout_width="match_parent"
@@ -290,7 +356,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="0dp"
                     app:strokeWidth="0dp">
 
@@ -314,7 +380,7 @@
                             android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="QR Code Bitcoin"/>
 
-                        <!-- Linha Divisória Vertical (Usando View padrão) -->
+                        <!-- Linha Divisória -->
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
@@ -342,11 +408,11 @@
                                     android:layout_height="24dp"
                                     android:layout_marginEnd="8dp"
                                     android:src="@drawable/ic_btc"
-                                    app:tint="?attr/colorPrimary"/> <!-- Ícone Bitcoin na cor do tema -->
+                                    app:tint="?attr/colorPrimary"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Apoie o projeto:"
+                                    android:text="@string/settings_support_title"
                                     android:textColor="?attr/colorPrimary"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
@@ -399,7 +465,7 @@
                                     android:id="@+id/tvTwitterHandle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="\@fabioferrante"
+                                    android:text="@string/twitter_handle"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textSize="14sp"
                                     android:textStyle="bold"/>
@@ -408,11 +474,11 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Créditos Finais -->
+                <!-- Créditos -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Desenvolvido por Fabio Ferrante"
+                    android:text="@string/settings_dev_by"
                     android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="12sp"
                     android:layout_gravity="center_horizontal"

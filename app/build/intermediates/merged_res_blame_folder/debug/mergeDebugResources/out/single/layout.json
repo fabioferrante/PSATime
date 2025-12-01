@@ -24,10 +24,6 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\layout\\bottom_sheet_add_result.xml"
     },
     {
-        "merged": "com.fabio.psatime.app-mergeDebugResources-50:/layout/item_psa_result.xml",
-        "source": "com.fabio.psatime.app-main-53:/layout/item_psa_result.xml"
-    },
-    {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-mergeDebugResources-50:\\layout\\fragment_dashboard.xml",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\layout\\fragment_dashboard.xml"
     },

@@ -36,7 +36,7 @@
         android:background="@android:color/transparent"
         app:cardElevation="0dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:strokeWidth="0dp"> <!-- CORREÇÃO 1: Fundo do Scroll -->
+        app:strokeWidth="0dp"> <!-- Fundo do Scroll -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
             android:padding="10dp"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardElevation="0dp"
-            app:strokeWidth="0dp"> <!-- CORREÇÃO 2: Fundo do LinearLayout -->
+            app:strokeWidth="0dp"> <!-- Fundo do LinearLayout -->
 
             <!-- Card de Status Dinâmico -->
             <com.google.android.material.card.MaterialCardView
@@ -56,7 +56,7 @@
                 app:cardBackgroundColor="@color/status_neutral_bg"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
-                app:strokeWidth="0dp"> <!-- CORREÇÃO 3: Borda do Card de Status -->
+                app:strokeWidth="0dp"> <!-- Borda do Card de Status -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,12 +106,13 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Título do Histórico -->
+            <!-- Título do Histórico -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp"
-                android:text="Histórico de Resultados"
+                android:text="@string/history_title"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="20sp"
                 android:textStyle="bold" />

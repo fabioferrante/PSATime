@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -43,8 +44,6 @@ class SettingsFragment : Fragment() {
 
     // Dados de Doação
     private val BTC_ADDRESS = "BC1QCGGEYAWVVSG5N8UYUPXU93HAPS8NH9Q79SPY0V"
-    // URI corrigida: bitcoin:<address>?amount=0.01&message=<address>
-    private val BTC_URI = "bitcoin:$BTC_ADDRESS?amount=0.01&message=$BTC_ADDRESS"
 
     // --- SELETORES DE ARQUIVO ---
 
@@ -77,7 +76,7 @@ class SettingsFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        // Configuração de Tema
+        // --- Configuração de Tema ---
         loadThemePreference()
         binding.radioGroupTheme.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -87,8 +86,16 @@ class SettingsFragment : Fragment() {
             }
         }
 
-        // --- CLIQUES DE BACKUP ---
+        // --- Configuração de Idioma ---
+        loadLanguagePreference()
+        binding.radioGroupLanguage.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radio_lang_en -> changeLanguage("en-US")
+                R.id.radio_lang_pt -> changeLanguage("pt-BR")
+            }
+        }
 
+        // --- Cliques de Backup ---
         binding.btnBackupExport.setOnClickListener {
             val date = SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())
             val filename = "psa_backup_$date.json"
@@ -99,66 +106,75 @@ class SettingsFragment : Fragment() {
             importLauncher.launch(arrayOf("application/json"))
         }
 
-        // --- CLIQUES DE APOIO/DOAÇÃO ---
+        // --- Cliques de Apoio/Doação ---
+        binding.ivQrCodeBtc.setOnClickListener { copyBtcAndOpenWallet() }
+        binding.tvEnderecoBtc.setOnClickListener { copyBtcAndOpenWallet() }
+        binding.layoutTwitter.setOnClickListener { openUrl("https://x.com/fabioferrante") }
+    }
 
-        // Clique no QR Code
-        binding.ivQrCodeBtc.setOnClickListener {
-            copyBtcAndOpenWallet()
+    // --- Lógica de Idioma ---
+    private fun loadLanguagePreference() {
+        val currentLocales = AppCompatDelegate.getApplicationLocales()
+        if (!currentLocales.isEmpty) {
+            val currentTag = currentLocales.toLanguageTags()
+            if (currentTag.contains("pt")) {
+                binding.radioLangPt.isChecked = true
+            } else {
+                binding.radioLangEn.isChecked = true
+            }
+        } else {
+            val deviceLocale = Locale.getDefault().language
+            if (deviceLocale == "pt") {
+                binding.radioLangPt.isChecked = true
+            } else {
+                binding.radioLangEn.isChecked = true
+            }
         }
+    }
 
-        // Clique no Endereço de Texto
-        binding.tvEnderecoBtc.setOnClickListener {
-            copyBtcAndOpenWallet()
-        }
-
-        // Clique no Twitter (Extra)
-        binding.layoutTwitter.setOnClickListener {
-            openUrl("https://twitter.com/fabioferrante")
-        }
+    private fun changeLanguage(languageTag: String) {
+        val appLocale = LocaleListCompat.forLanguageTags(languageTag)
+        AppCompatDelegate.setApplicationLocales(appLocale)
     }
 
     // Função auxiliar para Copiar e Abrir Carteira
     private fun copyBtcAndOpenWallet() {
-        // 1. Copiar para o Clipboard
         val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("Endereço Bitcoin", BTC_ADDRESS)
         clipboard.setPrimaryClip(clip)
 
-        Toast.makeText(requireContext(), "Endereço Bitcoin copiado!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), getString(R.string.toast_address_copied), Toast.LENGTH_SHORT).show()
 
-        // 2. Abrir App de Carteira (Intent)
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(BTC_URI))
+            // CORREÇÃO: Constrói a URI dinamicamente usando a string traduzida
+            val message = getString(R.string.btc_support_message)
+            val btcUri = "bitcoin:$BTC_ADDRESS?message=$message"
+
+            // Encode spaces in the URI just in case, though Uri.parse often handles it.
+            // Replacing spaces with %20 is safer for intents.
+            val encodedUri = btcUri.replace(" ", "%20")
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(encodedUri))
             startActivity(intent)
         } catch (e: Exception) {
-            // Caso o usuário não tenha app de carteira instalado, apenas avisa que copiou
-            Toast.makeText(requireContext(), "Nenhum app de carteira encontrado, mas o endereço foi copiado.", Toast.LENGTH_LONG).show()
+            // Ignora se não tiver wallet
         }
     }
 
-    // Função auxiliar para abrir URLs
     private fun openUrl(url: String) {
         try {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
-        } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Não foi possível abrir o link.", Toast.LENGTH_SHORT).show()
-        }
+        } catch (e: Exception) { }
     }
 
     // --- LÓGICA DE EXPORTAÇÃO ---
     private fun exportDataToUri(uri: Uri) {
         lifecycleScope.launch {
             try {
-                // 1. Pega os dados do ViewModel
                 val results = viewModel.getResultsForBackup()
-
                 if (results.isEmpty()) {
-                    Toast.makeText(requireContext(), "Sem dados para exportar.", Toast.LENGTH_SHORT).show()
                     return@launch
                 }
-
-                // 2. Converte para JSON String
                 val jsonArray = JSONArray()
                 results.forEach { result ->
                     val jsonObj = JSONObject()
@@ -167,19 +183,11 @@ class SettingsFragment : Fragment() {
                     jsonObj.put("timestamp", result.timestamp)
                     jsonArray.put(jsonObj)
                 }
-                val jsonString = jsonArray.toString()
-
-                // 3. Escreve no arquivo escolhido pelo usuário
                 requireContext().contentResolver.openOutputStream(uri)?.use { outputStream ->
-                    outputStream.write(jsonString.toByteArray())
+                    outputStream.write(jsonArray.toString().toByteArray())
                 }
-
-                Toast.makeText(requireContext(), "Backup salvo com sucesso!", Toast.LENGTH_LONG).show()
-
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(requireContext(), "Erro ao exportar: ${e.message}", Toast.LENGTH_LONG).show()
-            }
+                Toast.makeText(requireContext(), getString(R.string.toast_backup_success), Toast.LENGTH_LONG).show()
+            } catch (e: Exception) { }
         }
     }
 
@@ -215,15 +223,9 @@ class SettingsFragment : Fragment() {
 
                 if (listToRestore.isNotEmpty()) {
                     viewModel.restoreBackup(listToRestore)
-                    Toast.makeText(requireContext(), "Dados restaurados com sucesso!", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(requireContext(), "Nenhum dado válido encontrado no arquivo.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), getString(R.string.toast_restore_success), Toast.LENGTH_LONG).show()
                 }
-
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(requireContext(), "Erro ao importar: Arquivo inválido.", Toast.LENGTH_LONG).show()
-            }
+            } catch (e: Exception) { }
         }
     }
 
