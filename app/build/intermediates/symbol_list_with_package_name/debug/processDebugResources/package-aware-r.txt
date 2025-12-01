@@ -3059,6 +3059,7 @@ drawable bg_dialog_rounded
 drawable bg_drag_handle
 drawable bg_history_badge_green
 drawable bg_history_badge_red
+drawable bg_history_badge_yellow
 drawable bg_status_icon
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -3290,6 +3291,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_accept_terms
 id btn_backup_export
 id btn_backup_import
 id btn_cancel
@@ -3857,6 +3859,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_terms
 layout bottom_sheet_add_result
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -4129,6 +4132,10 @@ string status_normal_message
 string status_normal_title
 string status_warning_message
 string status_warning_title
+string terms_button_accept
+string terms_content
+string terms_subtitle
+string terms_title
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

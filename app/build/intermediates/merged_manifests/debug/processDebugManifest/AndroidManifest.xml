@@ -8,7 +8,6 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="36" />
 
-    <!-- PERMISSÕES -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -17,7 +16,8 @@
         android:name="com.fabio.psatime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.fabio.psatime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Para reagendar se o celular reiniciar -->
+    <uses-permission android:name="com.fabio.psatime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -31,6 +31,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.PSATime" >
+
+        <!-- Activity Principal (Launcher) -->
         <activity
             android:name="com.fabio.psatime.MainActivity"
             android:exported="true" >
@@ -41,7 +43,12 @@
             </intent-filter>
         </activity>
 
-        <!-- ADICIONE O RECEIVER AQUI (DENTRO DA APPLICATION) -->
+        <!-- NOVO: Activity de Termos -->
+        <activity
+            android:name="com.fabio.psatime.TermsActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+
         <receiver
             android:name="com.fabio.psatime.receiver.ReminderReceiver"
             android:enabled="true"

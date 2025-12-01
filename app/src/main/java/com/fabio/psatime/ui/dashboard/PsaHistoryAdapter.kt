@@ -82,7 +82,7 @@ class PsaHistoryAdapter(
                 val diff = result.value - previous.value
                 val percentage = if (previous.value != 0f) (diff / previous.value) * 100 else 0f
 
-                // CORREÇÃO 2: Formatação para 2 casas decimais (%.2f)
+                // Formatação para 2 casas decimais (%.2f)
                 val diffString = String.format(Locale.US, "%.2f", diff)
                 val percString = String.format(Locale.US, "%.0f", abs(percentage))
 
@@ -112,10 +112,10 @@ class PsaHistoryAdapter(
                 diffText = "$arrow $sign$diffString | $percString%"
                 showBadge = true
             } else {
-                // CORREÇÃO 1: Lógica para item único (sem anterior)
+                // Lógica para item único (sem anterior)
                 when {
                     result.value > 10f -> badgeColorRes = R.color.status_red
-                    result.value > 4f -> badgeColorRes = R.color.status_yellow // NOVO: > 4 é Amarelo
+                    result.value > 4f -> badgeColorRes = R.color.status_yellow // > 4 é Amarelo
                     else -> badgeColorRes = R.color.status_green
                 }
                 showBadge = false

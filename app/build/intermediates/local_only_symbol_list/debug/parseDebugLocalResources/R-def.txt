@@ -28,6 +28,7 @@ drawable bg_dialog_rounded
 drawable bg_drag_handle
 drawable bg_history_badge_green
 drawable bg_history_badge_red
+drawable bg_history_badge_yellow
 drawable bg_status_icon
 drawable ic_add
 drawable ic_arrow_back
@@ -53,6 +54,7 @@ drawable radio_background_top
 id action_dashboardFragment_to_settingsFragment
 id action_settings
 id appBarLayout
+id btn_accept_terms
 id btn_backup_export
 id btn_backup_import
 id btn_cancel
@@ -95,6 +97,7 @@ id tv_result_value
 id tv_status_message
 id tv_status_title
 layout activity_main
+layout activity_terms
 layout bottom_sheet_add_result
 layout dialog_delete_confirmation
 layout fragment_dashboard
@@ -117,6 +120,10 @@ string status_normal_message
 string status_normal_title
 string status_warning_message
 string status_warning_title
+string terms_button_accept
+string terms_content
+string terms_subtitle
+string terms_title
 style Base.Theme.PSATime
 style Theme.PSATime
 style ToolbarTitleStyle

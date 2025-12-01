@@ -99,7 +99,7 @@ class SettingsFragment : Fragment() {
             importLauncher.launch(arrayOf("application/json"))
         }
 
-        // --- CLIQUES DE APOIO/DOAÇÃO (NOVO) ---
+        // --- CLIQUES DE APOIO/DOAÇÃO ---
 
         // Clique no QR Code
         binding.ivQrCodeBtc.setOnClickListener {

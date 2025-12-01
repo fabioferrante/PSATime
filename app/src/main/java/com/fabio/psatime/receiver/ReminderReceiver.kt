@@ -74,8 +74,6 @@ class ReminderReceiver : BroadcastReceiver() {
     }
 
     private fun createNotificationChannel(context: Context) {
-        // CORREÇÃO: Removemos o "if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)"
-        // Como o minSdk é 26 (Oreo), esse código roda sempre.
         val name = "Lembretes PSA"
         val descriptionText = "Notificações de saúde e follow-up"
         val importance = NotificationManager.IMPORTANCE_HIGH

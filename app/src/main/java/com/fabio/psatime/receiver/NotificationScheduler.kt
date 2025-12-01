@@ -11,7 +11,7 @@ object NotificationScheduler {
     const val EXTRA_NOTIFICATION_TYPE = "notification_type"
     const val TYPE_NOVEMBRO_AZUL = "novembro_azul"
     const val TYPE_ONE_YEAR_FOLLOWUP = "one_year_followup"
-    const val TYPE_YELLOW_ALERT_FOLLOWUP = "yellow_alert_followup" // NOVO TIPO
+    const val TYPE_YELLOW_ALERT_FOLLOWUP = "yellow_alert_followup"
 
     private const val ID_NOVEMBRO = 1001
     private const val ID_ONE_YEAR = 1002

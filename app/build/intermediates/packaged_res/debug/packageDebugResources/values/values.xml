@@ -8,7 +8,7 @@
     <color name="status_neutral">#6C707E</color>
     <color name="status_neutral_bg">#F0F1F2</color>
     <color name="status_red">#d13233</color>
-    <color name="status_red_bg">#FCEBEB</color>
+    <color name="status_red_bg">#FFF2F2</color>
     <color name="status_yellow">#f57c24</color>
     <color name="status_yellow_bg">#FFF7EF</color>
     <color name="studio_dark_background">#1E1F22</color>
@@ -36,6 +36,28 @@
     <string name="status_normal_title">Nível Normal</string>
     <string name="status_warning_message">A variação do seu PSA ficou um pouco acima do ideal. \n\nOrientação: repita o exame em cerca de 3 meses. Se o resultado baixar, é provável que tenha sido apenas por não ter feito o jejum corretamente. Mas se o valor subir ou continuar com variação elevada, é importante procurar seu médico.</string>
     <string name="status_warning_title">Atenção! Variação elevada.</string>
+    <string name="terms_button_accept">Aceito e Continuar</string>
+    <string name="terms_content">
+O PSA Time é um aplicativo destinado exclusivamente ao acompanhamento e organização de informações relacionadas ao PSA (Antígeno Prostático Específico).
+Este aplicativo não realiza diagnóstico, não substitui consulta médica, e não oferece recomendações clínicas.\n\n
+
+Os valores, alertas, faixas de risco e análises apresentados no PSA Time têm caráter informativo e educacional, servindo apenas como apoio para o monitoramento pessoal da saúde da próstata.
+Qualquer decisão relacionada à saúde deve sempre ser tomada em conjunto com um médico ou urologista, profissional habilitado para interpretar exames, sintomas e histórico clínico.\n\n
+
+O usuário é o único responsável pelas informações inseridas no aplicativo, bem como pelas decisões tomadas com base nos dados exibidos.
+O PSA Time não coleta, transmite ou compartilha informações sem consentimento do usuário, e todo dado inserido é de responsabilidade exclusiva do próprio usuário em seu dispositivo.\n\n
+
+Ao utilizar o app, você concorda que:\n
+• Reconhece que o PSA Time não fornece opinião médica.\n
+• Compreende que resultados, gráficos e alertas são estimativas informativas.\n
+• Assume total responsabilidade pelas informações cadastradas e pelo uso dos dados gerados.\n
+• Concorda em buscar atendimento médico sempre que houver dúvida, alteração ou preocupação.\n
+• Aceita que o aplicativo pode ser atualizado, modificado ou descontinuado sem aviso prévio.\n\n
+
+Se você não concorda com estes termos, não prossiga com o uso do aplicativo.
+    </string>
+    <string name="terms_subtitle">Leia com atenção antes de continuar</string>
+    <string name="terms_title">Termos de Uso</string>
     <style name="Base.Theme.PSATime" parent="Theme.Material3.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/studio_light_primary</item>

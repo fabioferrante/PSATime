@@ -79,7 +79,6 @@ class PsaViewModel(application: Application) : AndroidViewModel(application) {
         return if (diffAnnual >= 0.4f) PsaStatus.Warning else PsaStatus.Normal
     }
 
-    // ... (restante das funções de insert, update, delete, backup mantêm-se iguais) ...
     fun insertResult(year: Int, value: Float) {
         viewModelScope.launch {
             val result = PsaResult(year = year, value = value)

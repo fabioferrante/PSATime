@@ -6,9 +6,9 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     app:cardElevation="0dp"
-    app:cardCornerRadius="16dp"
-    app:strokeWidth="0dp"
-    app:cardBackgroundColor="#00000000">
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="↓ -0.2 | -12%" />
 
-        <!-- NOVO TextView Valor (Agora é o principal, TOP) -->
+        <!-- TextView Valor (Agora é o principal, TOP) -->
         <TextView
             android:id="@+id/tv_result_value"
             android:layout_width="0dp"
@@ -85,7 +85,7 @@
             app:layout_constraintEnd_toStartOf="@id/tv_result_badge"
             tools:text="1.5 ng/mL" />
 
-        <!-- NOVO TextView Data (Agora é o secundário, BOTTOM) -->
+        <!-- TextView Data (Agora é o secundário, BOTTOM) -->
         <TextView
             android:id="@+id/tv_result_date"
             android:layout_width="0dp"

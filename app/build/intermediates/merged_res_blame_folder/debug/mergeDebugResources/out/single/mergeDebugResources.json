@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_bg_history_badge_yellow.xml.flat",
+        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\bg_history_badge_yellow.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_launcher_background.xml"
     },
@@ -56,6 +60,14 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\layout_activity_terms.xml.flat",
+        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\layout\\activity_terms.xml"
+    },
+    {
+        "merged": "com.fabio.psatime.app-debug-51:/menu_dashboard_menu.xml.flat",
+        "source": "com.fabio.psatime.app-main-53:/menu/dashboard_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
@@ -64,12 +76,16 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_btc_logo.xml"
     },
     {
-        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.fabio.psatime.app-debug-51:/layout_item_psa_result.xml.flat",
+        "source": "com.fabio.psatime.app-main-53:/layout/item_psa_result.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_menu.xml.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_download.xml.flat",
@@ -90,10 +106,6 @@
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_bg_status_icon.xml.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\bg_status_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_add.xml.flat",
@@ -128,16 +140,12 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_btc.xml"
     },
     {
-        "merged": "com.fabio.psatime.app-debug-51:/layout_activity_main.xml.flat",
-        "source": "com.fabio.psatime.app-main-53:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_bg_dialog_rounded.xml.flat",
+        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\bg_dialog_rounded.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_bg_dialog_rounded.xml.flat",
-        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\bg_dialog_rounded.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_launcher_foreground.xml.flat",
@@ -150,10 +158,6 @@
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\layout_fragment_dashboard.xml.flat",
@@ -200,16 +204,20 @@
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_twitter_logo.xml.flat",
-        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_twitter_logo.xml"
-    },
-    {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\menu_dashboard_menu.xml.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\menu\\dashboard_menu.xml"
     },
     {
+        "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_twitter_logo.xml.flat",
+        "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\drawable\\ic_twitter_logo.xml"
+    },
+    {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-main-53:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.fabio.psatime.app-debug-51:/layout_fragment_settings.xml.flat",
+        "source": "com.fabio.psatime.app-main-53:/layout/fragment_settings.xml"
     },
     {
         "merged": "C:\\Users\\Fabio\\.gradle\\daemon\\8.13\\com.fabio.psatime.app-debug-51:\\drawable_ic_qr_code_btc_placeholder.png.flat",

@@ -127,7 +127,7 @@ class DashboardFragment : Fragment() {
             binding.tvStatusTitle.setText(titleRes)
 
             // AJUSTE TEMPORÁRIO: Mensagem sempre preta (ou cor do tema onSurface)
-            // Em vez de 'contentColorRes', usamos a cor 'black' definida em colors.xml ou Color.BLACK
+            // Em vez de 'contentColorRes', usei a cor 'black' definida em colors.xml ou Color.BLACK
             binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.black))
             binding.tvStatusMessage.setText(messageRes)
         }

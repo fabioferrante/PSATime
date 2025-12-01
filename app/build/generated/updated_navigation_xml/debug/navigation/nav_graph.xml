@@ -10,14 +10,14 @@ app:startDestination="@id/dashboardFragment" >
     android:label="fragment_dashboard"
     tools:layout="@layout/fragment_dashboard" >
 
-    <!-- CORREÇÃO 1: Adiciona a "ponte" (action) -->
+    <!-- Adiciona a "ponte" (action) -->
     <action
         android:id="@+id/action_dashboardFragment_to_settingsFragment"
         app:destination="@id/settingsFragment" />
 
 </fragment>
 
-<!-- CORREÇÃO 2: Adiciona o Fragment de Settings -->
+<!-- Adiciona o Fragment de Settings -->
 <fragment
     android:id="@+id/settingsFragment"
     android:name="com.fabio.psatime.ui.settings.SettingsFragment"
