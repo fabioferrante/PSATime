@@ -74,14 +74,16 @@ class PsaHistoryAdapter(
             binding.tvResultDate.text = finalDateText
 
             // --- 3. Lógica de Cores ---
-            var badgeColorRes = R.color.status_green // Padrão
+            var badgeColorRes = R.color.status_green
             var diffText = ""
             var showBadge = false
 
             if (previous != null) {
                 val diff = result.value - previous.value
                 val percentage = if (previous.value != 0f) (diff / previous.value) * 100 else 0f
-                val diffString = String.format(Locale.US, "%.1f", diff)
+
+                // CORREÇÃO 2: Formatação para 2 casas decimais (%.2f)
+                val diffString = String.format(Locale.US, "%.2f", diff)
                 val percString = String.format(Locale.US, "%.0f", abs(percentage))
 
                 val timeDiffMs = result.timestamp - previous.timestamp
@@ -110,12 +112,11 @@ class PsaHistoryAdapter(
                 diffText = "$arrow $sign$diffString | $percString%"
                 showBadge = true
             } else {
-                // CORREÇÃO AQUI: Sem histórico anterior (Item Único ou o último da lista)
-                // Se for > 10, pinta o frasco de vermelho!
-                if (result.value > 10f) {
-                    badgeColorRes = R.color.status_red
-                } else {
-                    badgeColorRes = R.color.status_green
+                // CORREÇÃO 1: Lógica para item único (sem anterior)
+                when {
+                    result.value > 10f -> badgeColorRes = R.color.status_red
+                    result.value > 4f -> badgeColorRes = R.color.status_yellow // NOVO: > 4 é Amarelo
+                    else -> badgeColorRes = R.color.status_green
                 }
                 showBadge = false
             }
@@ -131,13 +132,19 @@ class PsaHistoryAdapter(
                 binding.tvResultBadge.text = diffText
                 binding.tvResultBadge.visibility = View.VISIBLE
 
-                if (badgeColorRes == R.color.status_green) {
-                    binding.tvResultBadge.setBackgroundResource(R.drawable.bg_history_badge_green)
-                    binding.tvResultBadge.setTextColor(ContextCompat.getColor(context, R.color.status_green))
-                } else {
-                    binding.tvResultBadge.setBackgroundResource(R.drawable.bg_history_badge_red)
-                    val textColor = if (badgeColorRes == R.color.status_yellow) R.color.status_yellow else R.color.status_red
-                    binding.tvResultBadge.setTextColor(ContextCompat.getColor(context, textColor))
+                when (badgeColorRes) {
+                    R.color.status_green -> {
+                        binding.tvResultBadge.setBackgroundResource(R.drawable.bg_history_badge_green)
+                        binding.tvResultBadge.setTextColor(ContextCompat.getColor(context, R.color.status_green))
+                    }
+                    R.color.status_yellow -> {
+                        binding.tvResultBadge.setBackgroundResource(R.drawable.bg_history_badge_yellow)
+                        binding.tvResultBadge.setTextColor(ContextCompat.getColor(context, R.color.status_yellow))
+                    }
+                    else -> { // Red
+                        binding.tvResultBadge.setBackgroundResource(R.drawable.bg_history_badge_red)
+                        binding.tvResultBadge.setTextColor(ContextCompat.getColor(context, R.color.status_red))
+                    }
                 }
             } else {
                 binding.tvResultBadge.visibility = View.GONE

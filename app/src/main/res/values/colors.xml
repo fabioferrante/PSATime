@@ -29,8 +29,7 @@
     <color name="status_yellow">#f57c24</color>
     <color name="status_yellow_bg">#FFF7EF</color>
     <color name="status_red">#d13233</color>
-<!--    <color name="status_red">#E55760</color>-->
-    <color name="status_red_bg">#FCEBEB</color>
+    <color name="status_red_bg">#FFF2F2</color>
 
     <color name="status_neutral">#6C707E</color>
     <color name="status_neutral_bg">#F0F1F2</color>

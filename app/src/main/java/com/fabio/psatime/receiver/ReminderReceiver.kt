@@ -33,7 +33,6 @@ class ReminderReceiver : BroadcastReceiver() {
                 title = "Atenção: Já faz 1 Ano!"
                 message = "Para um cálculo de delta eficiente, é importante manter seu exame anual em dia. Registre seu novo resultado."
             }
-            // NOVO BLOCO: Alerta de 3 Meses
             NotificationScheduler.TYPE_YELLOW_ALERT_FOLLOWUP -> {
                 title = "Importante: Confirmação Necessária"
                 message = "Houve uma variação no seu último exame. É crucial repetir o exame agora para confirmar o resultado e garantir um tratamento precoce, se necessário."
@@ -75,16 +74,16 @@ class ReminderReceiver : BroadcastReceiver() {
     }
 
     private fun createNotificationChannel(context: Context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Lembretes PSA"
-            val descriptionText = "Notificações de saúde e follow-up"
-            val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                description = descriptionText
-            }
-            val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
+        // CORREÇÃO: Removemos o "if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)"
+        // Como o minSdk é 26 (Oreo), esse código roda sempre.
+        val name = "Lembretes PSA"
+        val descriptionText = "Notificações de saúde e follow-up"
+        val importance = NotificationManager.IMPORTANCE_HIGH
+        val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+            description = descriptionText
         }
+        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 
     companion object {

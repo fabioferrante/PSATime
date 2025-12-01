@@ -2,6 +2,7 @@ package com.fabio.psatime
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent // Importante
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -20,9 +21,21 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: PsaViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 1. Aplica o Tema (Sempre primeiro)
         applySavedTheme()
 
         super.onCreate(savedInstanceState)
+
+        // 2. CHECK DE TERMOS DE USO (O Porteiro)
+        if (!isTermsAccepted()) {
+            // Se não aceitou, manda para a tela de Termos e encerra esta
+            val intent = Intent(this, TermsActivity::class.java)
+            startActivity(intent)
+            finish()
+            return // Para a execução do onCreate aqui
+        }
+
+        // Se chegou aqui, é porque já aceitou. Carrega o App normal.
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -30,31 +43,29 @@ class MainActivity : AppCompatActivity() {
         setupFollowUpReminder()
     }
 
+    // Função auxiliar para checar se aceitou
+    private fun isTermsAccepted(): Boolean {
+        val prefs = getSharedPreferences("psa_prefs", MODE_PRIVATE)
+        return prefs.getBoolean("terms_accepted", false)
+    }
+
     private fun setupFollowUpReminder() {
+        // ... (Mantém sua lógica existente igual) ...
         viewModel.allResults.observe(this) { results ->
             if (results.isNotEmpty()) {
                 val latest = results[0]
-
-                // 1. Agenda sempre o lembrete anual (regra geral)
                 NotificationScheduler.scheduleFollowUpNotification(this, latest.timestamp)
 
-                // 2. Lógica para o Alerta de 3 Meses (Amarelo)
                 var isYellowCondition = false
                 if (results.size >= 2) {
                     val previous = results[1]
                     val diff = latest.value - previous.value
-                    // Se a diferença foi >= 0.4, consideramos um alerta que exige reteste
-                    if (diff >= 0.4f) {
-                        isYellowCondition = true
-                    }
+                    if (diff >= 0.4f) isYellowCondition = true
                 }
 
                 if (isYellowCondition) {
-                    // Se estamos em alerta amarelo, agenda o aviso de 3 meses
                     NotificationScheduler.scheduleYellowAlertFollowUp(this, latest.timestamp)
                 } else {
-                    // Se está tudo normal (ou já virou vermelho confirmado/verde),
-                    // cancela qualquer aviso de 3 meses pendente para não incomodar o usuário.
                     NotificationScheduler.cancelYellowAlertFollowUp(this)
                 }
             }
@@ -62,6 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupNotifications() {
+        // ... (Mantém sua lógica existente igual) ...
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 101)
@@ -83,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun applySavedTheme() {
-        val prefs = getSharedPreferences("psa_theme_prefs", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("psa_theme_prefs", MODE_PRIVATE)
         val savedTheme = prefs.getString("theme_preference", "system")
 
         val mode = when (savedTheme) {

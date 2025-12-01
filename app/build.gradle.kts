@@ -14,15 +14,16 @@ android {
         applicationId = "com.fabio.psatime"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 1 // Mude para 2, 3, 4... a cada atualização na loja
+        versionName = "1.0" // Mude para "1.1", "2.0" conforme a evolução do app
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true // ATIVA a otimização e ofuscação
+            isShrinkResources = true // REMOVE imagens e layouts que não estão sendo usados
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -24,8 +24,7 @@
             app:title="PSA Time"
             app:titleCentered="false"
             app:contentInsetStartWithNavigation="0dp"
-            app:titleTextAppearance="@style/ToolbarTitleStyle" /> <!-- CORREÇÃO AQUI -->
-            />
+            app:titleTextAppearance="@style/ToolbarTitleStyle" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Conteúdo com Scroll -->
@@ -100,7 +99,8 @@
                         android:lineSpacingExtra="4dp"
                         android:text="@string/status_empty_message"
                         android:textColor="@color/status_neutral"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:justificationMode="inter_word"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

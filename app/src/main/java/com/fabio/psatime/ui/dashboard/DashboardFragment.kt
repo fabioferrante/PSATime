@@ -119,13 +119,16 @@ class DashboardFragment : Fragment() {
         // Helper para configurar cores e textos
         fun setCardState(bgColorRes: Int, contentColorRes: Int, iconRes: Int, titleRes: Int, messageRes: Int) {
             binding.cardStatus.setCardBackgroundColor(ContextCompat.getColor(context, bgColorRes))
+
+            // Ícone e Título continuam coloridos
             binding.imgStatusIcon.background.setTint(ContextCompat.getColor(context, contentColorRes))
             binding.imgStatusIcon.setImageResource(iconRes)
-
             binding.tvStatusTitle.setTextColor(ContextCompat.getColor(context, contentColorRes))
             binding.tvStatusTitle.setText(titleRes)
 
-            binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, contentColorRes))
+            // AJUSTE TEMPORÁRIO: Mensagem sempre preta (ou cor do tema onSurface)
+            // Em vez de 'contentColorRes', usamos a cor 'black' definida em colors.xml ou Color.BLACK
+            binding.tvStatusMessage.setTextColor(ContextCompat.getColor(context, R.color.black))
             binding.tvStatusMessage.setText(messageRes)
         }
 
@@ -154,7 +157,6 @@ class DashboardFragment : Fragment() {
                     R.string.status_danger_title, R.string.status_danger_message
                 )
             }
-            // NOVO ESTADO: Crítico Inicial (> 10)
             is PsaStatus.CriticalHigh -> {
                 setCardState(
                     R.color.status_red_bg, R.color.status_red, R.drawable.ic_error,

@@ -21,4 +21,28 @@
     <!-- NOVO: Status Crítico Inicial (> 10) -->
     <string name="status_critical_high_title">Alta suspeita. Investigar com urgência.</string>
     <string name="status_critical_high_message">Valores acima de 10 ng/mL frequentemente indicam quadros mais graves ou inflamatórios severos.\n\nSempre interprete qualquer resultado com um médico ou urologista.</string>
+
+    <!-- Termos de Uso -->
+    <string name="terms_title">Termos de Uso</string>
+    <string name="terms_subtitle">Leia com atenção antes de continuar</string>
+    <string name="terms_button_accept">Aceito e Continuar</string>
+    <string name="terms_content">
+O PSA Time é um aplicativo destinado exclusivamente ao acompanhamento e organização de informações relacionadas ao PSA (Antígeno Prostático Específico).
+Este aplicativo não realiza diagnóstico, não substitui consulta médica, e não oferece recomendações clínicas.\n\n
+
+Os valores, alertas, faixas de risco e análises apresentados no PSA Time têm caráter informativo e educacional, servindo apenas como apoio para o monitoramento pessoal da saúde da próstata.
+Qualquer decisão relacionada à saúde deve sempre ser tomada em conjunto com um médico ou urologista, profissional habilitado para interpretar exames, sintomas e histórico clínico.\n\n
+
+O usuário é o único responsável pelas informações inseridas no aplicativo, bem como pelas decisões tomadas com base nos dados exibidos.
+O PSA Time não coleta, transmite ou compartilha informações sem consentimento do usuário, e todo dado inserido é de responsabilidade exclusiva do próprio usuário em seu dispositivo.\n\n
+
+Ao utilizar o app, você concorda que:\n
+• Reconhece que o PSA Time não fornece opinião médica.\n
+• Compreende que resultados, gráficos e alertas são estimativas informativas.\n
+• Assume total responsabilidade pelas informações cadastradas e pelo uso dos dados gerados.\n
+• Concorda em buscar atendimento médico sempre que houver dúvida, alteração ou preocupação.\n
+• Aceita que o aplicativo pode ser atualizado, modificado ou descontinuado sem aviso prévio.\n\n
+
+Se você não concorda com estes termos, não prossiga com o uso do aplicativo.
+    </string>
 </resources>
