@@ -33,7 +33,7 @@ must comply with all terms in this section.
 ### 2.1 Mandatory Initial Commercial License Fee
 Commercial usage is only permitted **after** payment of a one-time fee of:
 
-## ** USD $100.00 (paid in Bitcoin)**
+## **USD $100.00 (paid in Bitcoin)**
 
 Payments accepted via:
 
@@ -104,4 +104,5 @@ The author is not liable for damages, losses, or issues resulting from usage of 
 ---
 
 ## End of License
+
 
