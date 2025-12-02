@@ -65,7 +65,7 @@ Para uso comercial (empresas, produtos pagos, SaaS etc.):
 
 Guia completo:
 
-[`legal/commercial-usage.md`](./legal/commercial-usage.md)  
+[`docs/usage/commercial-usage.md`](./docs/usage/commercial-usage.md)  
 Contrato completo em PDF → [`commercial-contract-full.pdf`](./legal/commercial-contract-full.pdf)
 
 **Endereços para pagamento:**
@@ -85,7 +85,7 @@ O uso comercial requer pagamento de **7%** sobre **lucro ou faturamento**, confo
 
 Guia detalhado:
 
-[`legal/royalty-guidelines.md`](./legal/royalty-guidelines.md)
+[`docs/legal/royalty-guidelines.md`](./docs/legal/royalty-guidelines.md)
 
 Inclui:
 
@@ -106,6 +106,7 @@ Toda documentação técnica está em:
 - Exemplos e fluxos de autenticação  
 
 Uma versão para navegador está em:
-[`legal/legal.html`](./legal/legal.html)
+[`/docs/legal/legal.html`](.//docs/legal/legal.html)
 
 ---
+
