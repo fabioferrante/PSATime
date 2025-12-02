@@ -65,8 +65,8 @@ Para uso comercial (empresas, produtos pagos, SaaS etc.):
 
 Guia completo:
 
-[`docs/usage/commercial-usage.md`](./docs/usage/commercial-usage.md)  
-Contrato completo em PDF → [`commercial-contract-full.pdf`](./legal/commercial-contract-full.pdf)
+[`commercial-usage.md`](./docs/usage/commercial-usage.md)  
+Contrato completo em PDF → [`commercial-contract-full.pdf`](./docs/legal/commercial-contract-full.pdf)
 
 **Endereços para pagamento:**
 
@@ -103,10 +103,8 @@ Toda documentação técnica está em:
 
 `docs/`
 
-- Exemplos e fluxos de autenticação  
-
-Uma versão para navegador está em:
-[`/docs/legal/legal.html`](.//docs/legal/legal.html)
+[`Technical Documentation`](./docs/PSA%20Time%20–%20Documentação%20Técnica.pdf.pdf)
 
 ---
+
 
