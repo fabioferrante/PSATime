@@ -16,12 +16,12 @@ Este repositório contém documentação legal, técnica e materiais do projeto.
 
 # Sumário
 
-- [ Sobre o PSA Time](#-sobre-o-psa-time)
-- [ Licença Aurora-7](#-licença-aurora-7)
-- [ Uso Comercial](#-uso-comercial)
-- [ Royalties (7%)](#-royalties-7)
-- [ Documentação Técnica](#-documentação-técnica)
-- [ Contato Comercial](#-contato-comercial)
+- [Sobre o PSA Time](#sobre-o-psa-time)
+- [Licença Aurora-7](#licença-aurora-7)
+- [Uso Comercial](#uso-comercial)
+- [Royalties (7%)](#royalties-7)
+- [Documentação Técnica](#documentação-técnica)
+- [Contato Comercial](#contato-comercial)
 
 ---
 
@@ -74,7 +74,7 @@ Contrato completo em PDF → [`commercial-contract-full.pdf`](./docs/legal/comme
 `initialeffect87@walletofsatoshi.com`  
 `lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkjmnfw35kzmr9venx2cm58qmsn3gyfx`
 
-**Bitcoin Mainnet:**  
+** ₿ Bitcoin Mainnet:**  
 `BC1QCGGEYAWVVSG5N8UYUPXU93HAPS8NH9Q79SPY0V`
 
 ---
@@ -106,5 +106,11 @@ Toda documentação técnica está em:
 [`Technical Documentation`](./docs/PSA%20Time%20–%20Documentação%20Técnica.pdf.pdf)
 
 ---
+
+# Contato Comercial
+
+- **X:** [@fabioferrante](https://x.com/fabioferrante)
+- **WhatsApp:** [Fabio](https://wa.me/c/554488040274)
+- **Telegram:** [@fabioferrante](https://t.me/fabioferrante)
 
 
