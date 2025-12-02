@@ -3,14 +3,13 @@
 ![Aurora7 License](./assets/aurora7\_badge.svg)
 ![Aurora7 Lightning](./assets/badge\_lightning.svg)
 
-PSA Time é um aplicativo e ecossistema projetado para **monitoramento anual inteligente do PSA (Antígeno Prostático Específico)**, com foco em:
+PSA Time é um aplicativo Android nativo focado na saúde preventiva masculina. Mais do que um simples histórico de exames, ele atua como um assistente inteligente para o monitoramento do PSA (Antígeno Prostático Específico).
 
-- Interface limpa e moderna  
-- Algoritmos de alerta e variação anual  
-- Painéis de risco  
-- Exportação de dados e histórico   
+O aplicativo implementa algoritmos de lógica clínica para analisar a velocidade de variação (delta) dos níveis de PSA, emitindo alertas proativos (Verde, Amarelo, Vermelho) e agendando notificações inteligentes para garantir que exames de confirmação ou rotina não sejam esquecidos.
 
-Este repositório contém documentação legal, técnica e materiais do projeto.
+Screenshots
+
+<img src="screenshots/dashboard_light.jpeg" width="200"/>  <img src="screenshots/dashboard_dark.jpeg" width="200"/>  <img src="screenshots/add_result.jpeg" width="200"/>  <img src="screenshots/settings.jpeg" width="200"/>
 
 ---
 
@@ -65,7 +64,7 @@ Para uso comercial (empresas, produtos pagos, SaaS etc.):
 
 Guia completo:
 
-[`commercial-usage.md`](./docs/usage/commercial-usage.md)  
+Uso comercial: [`commercial-usage.md`](./docs/usage/commercial-usage.md)  
 Contrato completo em PDF → [`commercial-contract-full.pdf`](./docs/legal/commercial-contract-full.pdf)
 
 **Endereços para pagamento:**
@@ -83,16 +82,12 @@ Contrato completo em PDF → [`commercial-contract-full.pdf`](./docs/legal/comme
 
 O uso comercial requer pagamento de **7%** sobre **lucro ou faturamento**, conforme acordado.
 
-Guia detalhado:
-
-[`docs/legal/royalty-guidelines.md`](./docs/legal/royalty-guidelines.md)
+Guia detalhado: [`royalty-guidelines.md`](./docs/legal/royalty-guidelines.md)
 
 Inclui:
-
 - Como calcular  
 - Como reportar  
-- Periodicidade  
-- Templates de relatório  
+- Periodicidade   
 - Obrigações e prazos  
 
 ---
@@ -103,15 +98,14 @@ Toda documentação técnica está em:
 
 `docs/`
 
-[`Technical Documentation`](./docs/PSA%20Time%20–%20Documentação%20Técnica.pdf.pdf)
-
 ---
 
 # Contato Comercial
 
-- **X:** [@fabioferrante](https://x.com/fabioferrante)
-- **WhatsApp:** [Fabio](https://wa.me/c/554488040274)
-- **Telegram:** [@fabioferrante](https://t.me/fabioferrante)
+- X: [@fabioferrante](https://x.com/fabioferrante)
+- WhatsApp: [Fabio](https://wa.me/c/554488040274)
+- Telegram: [@fabioferrante](https://t.me/fabioferrante)
+
 
 
 
