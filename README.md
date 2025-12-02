@@ -17,7 +17,7 @@ Este repositório contém documentação legal, técnica e materiais do projeto.
 # Sumário
 
 - [Sobre o PSA Time](#sobre-o-psa-time)
-- [Licença Aurora-7](#licença-aurora-7)
+- [Aurora-7 Royalty License](#aurora-7-royalty-license)
 - [Uso Comercial](#uso-comercial)
 - [Royalties (7%)](#royalties-7)
 - [Documentação Técnica](#documentação-técnica)
@@ -38,7 +38,7 @@ Este repositório inclui:
 
 ---
 
-# Licença Aurora-7 Royalty License
+# Aurora-7 Royalty License
 
 Este projeto é licenciado sob a **Aurora-7 Royalty License**, um modelo híbrido:
 
@@ -112,6 +112,7 @@ Toda documentação técnica está em:
 - **X:** [@fabioferrante](https://x.com/fabioferrante)
 - **WhatsApp:** [Fabio](https://wa.me/c/554488040274)
 - **Telegram:** [@fabioferrante](https://t.me/fabioferrante)
+
 
 
 
