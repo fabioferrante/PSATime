@@ -135,8 +135,7 @@ Se este projeto te ajudou, considere apoiar o desenvolvimento:
 
 
 **Lightning (LNURL):**  
-`initialeffect87@walletofsatoshi.com`  
-`lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkjmnfw35kzmr9venx2cm58qmsn3gyfx`
+`seedz@bipa.app`  
 
 ** ₿ Bitcoin Mainnet:**  
 `BC1QCGGEYAWVVSG5N8UYUPXU93HAPS8NH9Q79SPY0V`
@@ -182,8 +181,7 @@ Contrato completo em PDF → [`commercial-contract-full.pdf`](./docs/legal/comme
 **Endereços para pagamento:**
 
 **Lightning (LNURL):**  
-`initialeffect87@walletofsatoshi.com`  
-`lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkjmnfw35kzmr9venx2cm58qmsn3gyfx`
+`seedz@bipa.app`  
 
 ** ₿ Bitcoin Mainnet:**  
 `BC1QCGGEYAWVVSG5N8UYUPXU93HAPS8NH9Q79SPY0V`
@@ -217,6 +215,7 @@ Toda documentação técnica está em:
 - X: [@fabioferrante](https://x.com/fabioferrante)
 - WhatsApp: [Fabio](https://wa.me/c/554488040274)
 - Telegram: [@fabioferrante](https://t.me/fabioferrante)
+
 
 
 
