@@ -37,11 +37,8 @@ O uso comercial só é permitido **após** o pagamento de uma taxa única de:
 
 Pagamentos aceitos via:
 
-### Endereço Lightning
-`initialeffect87@walletofsatoshi.com`
-
-### LNURL
-`lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkjmnfw35kzmr9venx2cm58qmsn3gyfx`
+### Endereço Lightning Bitcoin
+`seedz@bipa.app`
 
 ### Endereço da Rede Principal Bitcoin
 `BC1QCGGEYAWVVSG5N8UYUPXU93HAPS8NH9Q79SPY0V`
